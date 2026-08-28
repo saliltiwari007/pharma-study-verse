@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "programs": [
+    {"id":"bpharm","name":"B.Pharm","status":"active","semesters":"configurable"},
+    {"id":"dpharm","name":"D.Pharm","status":"planned","semesters":"configurable"},
+    {"id":"mpharm","name":"M.Pharm","status":"planned","semesters":"configurable"},
+    {"id":"pharmd","name":"Pharm.D","status":"planned","semesters":"configurable"},
+    {"id":"gpat","name":"GPAT & Competitive Preparation","status":"planned","semesters":"not_applicable"}
+  ],
+  "rule": "Curriculum content is versioned by program, academic year/semester, subject and topic; published content is immutable by default and revisions create a new version."
+}
