@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "principles": {
+    "serverAuthoritative": true,
+    "clientTrust": false,
+    "answerKeysPublic": false,
+    "persistentScoresClientOnly": false
+  },
+  "delivery": {
+    "questionPoolSelection": "randomized",
+    "optionOrder": "shuffled",
+    "questionOrder": "shuffled",
+    "variantGeneration": "optional",
+    "attemptSession": "serverIssued",
+    "timer": "serverValidated",
+    "attemptLimits": "configurable",
+    "cooldown": "configurable"
+  },
+  "integrity": {
+    "recordAttemptEvents": true,
+    "detectRapidPatterns": true,
+    "detectRepeatedAnswerPatterns": true,
+    "flagSuspiciousAttempts": true,
+    "manualReview": true,
+    "neverClaimPerfectAntiCheat": true
+  },
+  "ranking": {
+    "calculatedServerSide": true,
+    "eligibleAttemptsOnly": true,
+    "tiesUseSecondaryMetrics": true,
+    "activitySpecificRanks": true,
+    "subjectSpecificRanks": true,
+    "overallRank": true
+  }
+}
