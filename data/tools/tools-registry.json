@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "name": "Pharma Study Verse Tools Registry",
+  "purpose": "A practical toolbox for pharmacy learning, calculations, research, career preparation, manufacturing and pharmaceutical marketing.",
+  "principles": [
+    "Calculators show formula, substituted values, intermediate steps, final answer and unit checks.",
+    "Educational calculators do not replace official standards, validated software, institutional SOPs or professional judgment.",
+    "Clinical or patient-specific calculations must remain clearly labelled educational and must not be presented as treatment instructions.",
+    "Career tools support preparation and drafting; they do not guarantee employment or selection.",
+    "Dictionary definitions should be linked to approved or reviewed content where possible."
+  ],
+  "categories": [
+    {"id":"calculators","label":"Calculators","description":"Step-by-step pharmacy, science, research and production calculations."},
+    {"id":"dictionary","label":"Pharma Dictionary","description":"Searchable pharmacy terms, abbreviations and quick explanations."},
+    {"id":"career","label":"Career & Jobs","description":"Resume, job-role, interview and skill tools for pharmacy career paths."},
+    {"id":"manufacturing","label":"Manufacturing","description":"Batch, yield, capacity, efficiency and production-support calculations."},
+    {"id":"marketing","label":"Marketing & Sales","description":"Ethical pharma marketing, sales planning and business metrics."},
+    {"id":"research","label":"Research & Analysis","description":"Basic descriptive statistics, study calculations and data helpers."},
+    {"id":"academic","label":"Academic Helpers","description":"Study planning, unit conversion, grade and revision utilities."}
+  ],
+  "calculator_quality": {
+    "required_output": ["formula","known_values","unit_conversion_if_needed","substitution","intermediate_steps","final_answer","sanity_check","educational_note"],
+    "rounding": "Show enough precision for learning and make rounding explicit.",
+    "auditability": "Inputs and calculation steps should remain visible so a student can reproduce the result manually."
+  },
+  "career_roles": ["Marketing / Medical Sales", "Production / Manufacturing", "Quality Control", "Quality Assurance", "Regulatory Affairs", "Pharmacovigilance", "Clinical Research", "Hospital / Clinical Pharmacy", "Community Pharmacy", "Pharmaceutical Analysis", "Research / Academia", "Pharma + AI / Data", "Drug Regulatory / Inspection", "Supply Chain / Operations", "Business / Entrepreneurship"]
+}
