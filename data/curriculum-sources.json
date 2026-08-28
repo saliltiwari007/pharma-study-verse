@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "policy": "Every curriculum is versioned independently by authority, programme, jurisdiction/university/board and academic year. Official source wins; unresolved items remain explicitly unresolved rather than being guessed.",
+  "sources": [
+    {
+      "id":"pci-bpharm-2026",
+      "programme":"B.Pharm",
+      "authority":"Pharmacy Council of India",
+      "academic_year":"2026",
+      "status":"authoritative",
+      "url":"https://www.pci.gov.in/en/syllabus-bachelor-of-pharmacy-b-pharm-2026-as-per-nep-2020/"
+    },
+    {
+      "id":"pci-pharmd",
+      "programme":"Pharm.D",
+      "authority":"Pharmacy Council of India",
+      "status":"authoritative-regulations-source",
+      "url":"https://www.pci.gov.in/en/pharmd-regulations/",
+      "notes":"Use the official Pharm.D Regulations attachments for the detailed course content; maintain separate versions for Pharm.D and Pharm.D (Post Baccalaureate)."
+    },
+    {
+      "id":"pci-mpharm",
+      "programme":"M.Pharm",
+      "authority":"Pharmacy Council of India",
+      "status":"authoritative-regulations-source",
+      "url":"https://www.pci.gov.in/en/course-wise-regulations/",
+      "notes":"PCI course-wise regulations lists the M.Pharm course regulations/amendments and the final scheme and syllabus. Specialisation must be represented as a separate configurable track."
+    },
+    {
+      "id":"upbte-dpharm",
+      "programme":"D.Pharm",
+      "authority":"Board of Technical Education, Uttar Pradesh",
+      "status":"official-board-source-found",
+      "url":"https://www.bteup.ac.in/webapp/SYLLABUS.aspx?type=3",
+      "notes":"The BTEUP syllabus portal identifies the two-year Diploma in Pharmacy annual-system syllabus. Do not replace it with a generic PCI D.Pharm structure when a UPBTE-specific version is required."
+    },
+    {
+      "id":"aktu-pharmacy",
+      "programme":"AKTU pharmacy programmes",
+      "authority":"Dr. A.P.J. Abdul Kalam Technical University",
+      "status":"official-ecosystem-source-found; exact-current-regulation-to-be-versioned",
+      "url":"https://ilms.aktu.ac.in/course/index.php",
+      "notes":"AKTU ILMS has a Pharmaceutical Science category and course resources. Exact university syllabus documents should be attached to a programme/version only after their official current syllabus document is verified."
+    },
+    {
+      "id":"gpat-2026",
+      "programme":"GPAT",
+      "authority":"NBEMS / Pharmacy Council of India",
+      "status":"authoritative-exam-blueprint",
+      "url":"https://natboard.edu.in/viewnbeexam?exam=gpat",
+      "notes":"GPAT 2026 bulletin states that the syllabus comprises subject/knowledge areas as per the B.Pharm Course Regulations, 2024. Keep this version separate from the PCI B.Pharm 2026 NEP syllabus."
+    }
+  ]
+}
