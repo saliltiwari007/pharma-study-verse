@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "exam": "GPAT",
+  "edition": "2026",
+  "status": "active_reference",
+  "authority": "NBEMS / Pharmacy Council of India",
+  "exam_date": "2026-03-07",
+  "pattern": {
+    "questions": 125,
+    "maximum_marks": 500,
+    "marks_per_correct": 4,
+    "negative_marks_per_incorrect": 1,
+    "mode": "CBT",
+    "sessions": 1
+  },
+  "indicative_blueprint": [
+    {"area":"Pharmaceutical Chemistry & Allied Subjects","questions":38,"marks":152},
+    {"area":"Pharmaceutics & Allied Subjects","questions":38,"marks":152},
+    {"area":"Pharmacognosy & Allied Subjects","questions":10,"marks":40},
+    {"area":"Pharmacology & Allied Subjects","questions":28,"marks":112},
+    {"area":"Other Subjects of B.Pharm course","questions":11,"marks":44}
+  ],
+  "syllabus_basis": "The GPAT 2026 bulletin states that the syllabus comprises subject/knowledge areas as per The Bachelor of Pharmacy (B.Pharm.) Course Regulations, 2024.",
+  "important_version_rule": "Do not silently substitute the newer B.Pharm 2026 NEP syllabus for the GPAT 2026 syllabus basis. Keep GPAT versions separately versioned and update only when the competent authority publishes a new basis.",
+  "content_policy": "Use official examination documents as the authority. Third-party topic lists may assist discovery but are not treated as authoritative without official confirmation.",
+  "source_urls": [
+    "https://natboard.edu.in/viewnbeexam?exam=gpat",
+    "https://gpat.nta.nic.in/"
+  ]
+}
