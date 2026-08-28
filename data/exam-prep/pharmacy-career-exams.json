@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "purpose": "Pharmacy career and competitive-exam preparation catalogue. Exam schemes and eligibility must be versioned from the latest official recruiting/competent-authority notice before publishing preparation content.",
+  "tracks": [
+    {
+      "id": "railway-pharmacist",
+      "name": "Railway Pharmacist",
+      "authority": "Railway Recruitment Boards",
+      "status": "active-catalogue",
+      "rule": "Use the latest RRB Pharmacist recruitment notice/CEN as the authoritative exam pattern, eligibility, vacancies and syllabus. Do not assume an old CEN remains current."
+    },
+    {
+      "id": "dpharm-exit-examination",
+      "name": "D.Pharm Exit Examination",
+      "authority": "Pharmacy Council of India / prescribed authority",
+      "status": "active-catalogue",
+      "official_basis": "Diploma in Pharmacy Exit Examination Regulations, 2022",
+      "rule": "Version all preparation content against the latest PCI scheme/syllabus announcement."
+    },
+    {
+      "id": "drug-inspector",
+      "name": "Drug Inspector / Drugs Inspector recruitment",
+      "authority": "Recruiting authority varies by post",
+      "status": "active-catalogue",
+      "rule": "Separate central and state recruitment notices. Eligibility, scheme, syllabus and subject weightage are notice-specific."
+    },
+    {
+      "id": "drug-analyst",
+      "name": "Drug Analyst / Government pharmaceutical analysis posts",
+      "authority": "Recruiting authority varies by post",
+      "status": "active-catalogue",
+      "rule": "Separate each recruitment authority/notice; do not create a single universal syllabus unless an authority explicitly provides one."
+    },
+    {
+      "id": "government-pharmacist",
+      "name": "Government Pharmacist examinations",
+      "authority": "Central/State/department-specific",
+      "status": "active-catalogue",
+      "rule": "Create authority-specific preparation tracks from official notifications."
+    }
+  ],
+  "content_strategy": {
+    "common_core": "Map common pharmacy concepts from approved B.Pharm/D.Pharm curriculum into reusable preparation modules.",
+    "exam_layer": "Add exam-specific questions, laws, current rules, aptitude/general sections and weighting only when supported by the current official notice.",
+    "versioning": true,
+    "human_approval_required_before_publish": true
+  }
+}
