@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharma Study Verse | Pharmacy Education Resources</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7fafb;
+  color:#17324d;
+  line-height:1.6;
+}
+
+header{
+  background:#ffffff;
+  border-bottom:1px solid #e3ecef;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:16px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:20px;
+  font-weight:700;
+  color:#116b72;
+}
+
+.logo-mark{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#e7f5f4;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#38556b;
+  margin-left:22px;
+  font-size:14px;
+}
+
+.hero{
+  background:linear-gradient(135deg,#e9f7f6,#f4f8ff);
+  padding:80px 22px;
+}
+
+.hero-inner{
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  background:#ffffff;
+  color:#14757b;
+  padding:7px 15px;
+  border-radius:20px;
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:clamp(36px,6vw,62px);
+  line-height:1.1;
+  margin-bottom:20px;
+  color:#14344e;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:18px;
+  color:#587083;
+}
+
+.button{
+  display:inline-block;
+  margin-top:28px;
+  padding:13px 24px;
+  background:#14777b;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+}
+
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:65px 22px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.section-title h2{
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+.section-title p{
+  color:#6a7f8e;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:28px;
+  border:1px solid #e2eaed;
+  border-radius:14px;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px rgba(20,70,80,.08);
+}
+
+.icon{
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin-bottom:8px;
+  color:#183c56;
+}
+
+.card p{
+  color:#667b89;
+  font-size:14px;
+}
+
+.about{
+  background:white;
+  border-top:1px solid #e5edef;
+  border-bottom:1px solid #e5edef;
+}
+
+.about-inner{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+
+.about h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.about p{
+  color:#617684;
+}
+
+.cta{
+  text-align:center;
+  background:#edf8f7;
+  border-radius:18px;
+}
+
+footer{
+  background:#14344e;
+  color:#dbe9ee;
+  text-align:center;
+  padding:28px 20px;
+  font-size:13px;
+}
+
+footer strong{
+  color:white;
+}
+
+@media(max-width:750px){
+  nav{display:none}
+
+  .hero{
+    padding:60px 18px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:50px 18px;
+  }
+
+  h1{
+    font-size:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <div class="logo-mark">⚕</div>
+      Pharma Study Verse
+    </div>
+
+    <nav>
+      <a href="#resources">Resources</a>
+      <a href="#academic">Academic</a>
+      <a href="#guidance">Guidance</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">Pharmacy Education & Learning Resources</div>
+
+    <h1>Learn Pharmacy.<br>Build Your Future.</h1>
+
+    <p>
+      A simple and reliable learning space for pharmacy students,
+      bringing together study resources, notes, academic materials
+      and student guidance.
+    </p>
+
+    <a class="button" href="#resources">Explore Resources</a>
+  </div>
+</section>
+
+<section id="resources">
+
+  <div class="section-title">
+    <h2>Study Resources</h2>
+    <p>Useful academic resources organised for easier learning.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Study Resources</h3>
+      <p>
+        Helpful resources to support pharmacy subjects,
+        revision and regular study.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Notes</h3>
+      <p>
+        Clear and organised study notes designed
+        for quick learning and revision.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h3>Learning Materials</h3>
+      <p>
+        Educational materials to help students
+        understand important pharmacy concepts.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<div class="about" id="academic">
+<section>
+
+  <div class="section-title">
+    <h2>Academic Resources</h2>
+    <p>Supporting students throughout their academic journey.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">🔬</div>
+      <h3>Pharmacy Subjects</h3>
+      <p>
+        Explore academic content and learning resources
+        related to pharmacy education.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📖</div>
+      <h3>Exam Preparation</h3>
+      <p>
+        Resources that can help students prepare,
+        revise and study more effectively.
+      </p>
+    </div>
+
+    <div class="card" id="guidance">
+      <div class="icon">💡</div>
+      <h3>Student Guidance</h3>
+      <p>
+        Practical guidance and useful information
+        for pharmacy students.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+</div>
+
+<section id="about">
+  <div class="about-inner">
+
+    <h2>About Pharma Study Verse</h2>
+
+    <p>
+      Pharma Study Verse is an educational platform focused on
+      pharmacy students and academic learning. Our aim is to make
+      useful study resources easier to discover, access and use.
+    </p>
+
+  </div>
+</section>
+
+<section>
+  <div class="cta">
+
+    <h2>Keep Learning. Keep Growing.</h2>
+
+    <p>
+      Explore pharmacy education resources designed with students in mind.
+    </p>
+
+    <a class="button" href="#resources">Start Learning</a>
+
+  </div>
+</section>
+
+<footer>
+  <strong>Pharma Study Verse</strong><br>
+  Pharmacy Education • Study Resources • Student Guidance
+</footer>
+
+</body>
+</html>
