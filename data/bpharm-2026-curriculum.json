@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "program": "bpharm",
+  "academic_year": "2026",
+  "source": "B.Pharm Syllabus 2026 as Per PCI.pdf",
+  "semesters": [
+    {
+      "semester": 1,
+      "courses": [
+        {"code":"BP101T","name":"Basics of Python Programming for Pharmaceutical Sciences","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP102T","name":"General Pharmacy","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP103T","name":"Healthcare Psychology and Communication Skills","type":"theory","hours_per_week":1,"credits":1},
+        {"code":"BP104T","name":"Human Anatomy, Physiology and Pathophysiology I","type":"theory","hours_per_week":4,"credits":4},
+        {"code":"BP105T","name":"Introduction to Pharmacognosy","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP106T","name":"Pharmaceutical Inorganic and Analytical Chemistry","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP107P","name":"General Pharmacy","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP108P","name":"Healthcare Psychology and Communication Skills","type":"practical","hours_per_week":2,"credits":1},
+        {"code":"BP109P","name":"Human Anatomy, Physiology and Pathophysiology I","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP110P","name":"Introduction to Pharmacognosy","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP111P","name":"Pharmaceutical Inorganic and Analytical Chemistry","type":"practical","hours_per_week":3,"credits":1}
+      ],
+      "total_hours_per_week":30,
+      "total_credits":21
+    },
+    {
+      "semester": 2,
+      "courses": [
+        {"code":"BP201T","name":"Applied Biostatistics and Data Analytics for Pharmaceutical Sciences","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP202T","name":"Biochemistry","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP203T","name":"Human Anatomy, Physiology and Pathophysiology II","type":"theory","hours_per_week":4,"credits":4},
+        {"code":"BP204T","name":"Pharmaceutical Organic Chemistry","type":"theory","hours_per_week":4,"credits":4},
+        {"code":"BP205T","name":"Pharmacognosy and Phytochemistry","type":"theory","hours_per_week":4,"credits":4},
+        {"code":"BP206T","name":"Physical Pharmaceutics","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP207P","name":"Biochemistry","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP208P","name":"Human Anatomy, Physiology and Pathophysiology II","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP209P","name":"Pharmaceutical Organic Chemistry","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP210P","name":"Pharmacognosy and Phytochemistry","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP211P","name":"Physical Pharmaceutics","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP212P","name":"SEC","type":"elective","hours_per_week":2,"credits":1,"options":["Communication Skills","Mental Well-Being, Stress & Conflict Management","Fundamentals of Computer Operations"]}
+      ],
+      "total_hours_per_week":37,
+      "total_credits":26
+    },
+    {
+      "semester": 3,
+      "courses": [
+        {"code":"BP301T","name":"Introduction to Machine Learning in Pharmaceutical Sciences","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP302T","name":"Environmental Sciences","type":"theory","hours_per_week":1,"credits":1},
+        {"code":"BP303T","name":"Ethics and Universal Human Values","type":"theory","hours_per_week":1,"credits":1},
+        {"code":"BP304T","name":"General Pharmacology","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP305T","name":"Heterocyclic Compounds and Stereochemistry","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP306T","name":"Pharmaceutical Dosage Forms I","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP307T","name":"Pharmaceutical Engineering","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP308T","name":"Pharmaceutical Microbiology","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP309P","name":"General Pharmacology","type":"practical","hours_per_week":4,"credits":2},
+        {"code":"BP310P","name":"Heterocyclic Compounds and Stereochemistry","type":"practical","hours_per_week":4,"credits":2},
+        {"code":"BP311P","name":"Pharmaceutical Dosage Forms I","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP312P","name":"AEC","type":"elective","hours_per_week":2,"credits":1,"options":["Nutraceuticals and Functional Foods","Food Analysis","Yoga and Life Sciences"]}
+      ],
+      "total_hours_per_week":32,
+      "total_credits":25
+    },
+    {
+      "semester": 4,
+      "courses": [
+        {"code":"BP401T","name":"Herbal Drug Technology","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP402T","name":"Medicinal Chemistry","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP403T","name":"Pharmaceutical Biotechnology","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP404T","name":"Social Pharmacy and Public Health","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP405T","name":"Systemic Pharmacology I","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP406P","name":"Herbal Drug Technology","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP407P","name":"Medicinal Chemistry","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP408P","name":"Pharmaceutical Biotechnology","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP409P","name":"Social Pharmacy and Public Health","type":"practical","hours_per_week":2,"credits":1},
+        {"code":"BP410P","name":"Systemic Pharmacology I","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP411I","name":"Internship","type":"internship","hours_per_week":8,"credits":4,"mandatory":true}
+      ],
+      "total_hours_per_week":28,
+      "total_credits":23
+    },
+    {
+      "semester": 5,
+      "courses": [
+        {"code":"BP501T","name":"Biomedicinal Chemistry","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP502T","name":"Industrial Pharmacognosy","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP503T","name":"Innovation and Startup Ecosystem","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP504T","name":"Pharmaceutical Dosage Form II","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP505T","name":"Pharmaceutical Quality Assurance","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP506T","name":"Systemic Pharmacology II","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP507P","name":"Biomedicinal Chemistry","type":"practical","hours_per_week":4,"credits":2},
+        {"code":"BP508P","name":"Industrial Pharmacognosy","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP509P","name":"Pharmaceutical Dosage Form II","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP510P","name":"Systemic Pharmacology II","type":"practical","hours_per_week":4,"credits":2}
+      ],
+      "total_hours_per_week":30,
+      "total_credits":22
+    },
+    {
+      "semester": 6,
+      "courses": [
+        {"code":"BP601T","name":"Advanced Pharmacognosy","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP602T","name":"Biopharmaceutics and Pharmacokinetics","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP603T","name":"Intellectual Property Rights","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP604T","name":"AI Applications in Pharmaceutical Sciences","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP605T","name":"Pharmaceutical Analysis","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP606T","name":"Pharmaceutical Jurisprudence","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP607T","name":"AEC","type":"elective","hours_per_week":1,"credits":1,"options":["Green Chemistry","Materiovigilance and Hemovigilance","Scientific Writing","Drug Store and Business Management","Career Building in Cultivation of Medicinal Plants","Active Pharmaceutical Ingredients and Excipient Sciences"]},
+        {"code":"BP608P","name":"Biopharmaceutics and Pharmacokinetics","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP609P","name":"Pharmaceutical Analysis","type":"practical","hours_per_week":4,"credits":2},
+        {"code":"BP610P","name":"SEC","type":"elective","hours_per_week":2,"credits":1,"options":["Computer-Aided Drug Design","Analytical Method Development and Validation","Principles of Preclinical Studies"]},
+        {"code":"BP611P","name":"VAC","type":"elective","hours_per_week":2,"credits":1,"options":["Professional Skills","Process Analytical Technology (PAT) and QbD in Formulation Science"]},
+        {"code":"BP612I","name":"Internship","type":"internship","hours_per_week":8,"credits":4,"mandatory":true}
+      ],
+      "total_hours_per_week":28,
+      "total_credits":26
+    },
+    {
+      "semester": 7,
+      "courses": [
+        {"code":"BP701T","name":"Biostatistics Research methodology","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP702T","name":"Cosmetics and Cosmeceuticals","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP703T","name":"AI in Clinical applications","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP704T","name":"Modern Analytical Techniques","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP705T","name":"Pharmacovigilance","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP706T","name":"Pharmacy Practice","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP707T","name":"Regulatory Affairs","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP708T","name":"AEC","type":"elective","hours_per_week":1,"credits":1,"options":["Current Good Manufacturing Practices (cGMP)","Pharmaceutical Automation","Modern Techniques in Cellular Biology","Medical Devices","Transformation of Food Waste into Medicinal Products","Biosimilars, Vaccines & Macromolecules"]},
+        {"code":"BP709P","name":"Modern Analytical Techniques","type":"practical","hours_per_week":3,"credits":1},
+        {"code":"BP710RP","name":"Research Project","type":"research_project","hours_per_week":null,"credits":6}
+      ],
+      "total_hours_per_week":22,
+      "total_credits":26
+    },
+    {
+      "semester": 8,
+      "courses": [
+        {"code":"BP801T","name":"Ethical Considerations and Translational Applications of AI in Pharmacy","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP802T","name":"Clinical Pharmacotherapeutics","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP803T","name":"Industrial Pharmacy and Facility Design","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP804T","name":"Pharmaceutical Management","type":"theory","hours_per_week":2,"credits":2},
+        {"code":"BP805T","name":"Sterile Dosage Forms and Novel Drug Delivery System","type":"theory","hours_per_week":3,"credits":3},
+        {"code":"BP806T","name":"AEC","type":"elective","hours_per_week":2,"credits":2,"options":["Pharmaceutical Packaging","Supply Chain Management","Industrial Safety and Waste Management","Traditional Healing Practices of India","Futuristic Pharma through AR/VR: Pharma 4.0","Herbal Cosmetics for Industry Perspective"]},
+        {"code":"BP807P","name":"Pharmaceutical Marketing Skills","type":"practical","hours_per_week":2,"credits":1},
+        {"code":"BP808P","name":"Sterile Dosage Forms and Novel Drug Delivery System","type":"practical","hours_per_week":4,"credits":2},
+        {"code":"BP809P","name":"VAC","type":"elective","hours_per_week":2,"credits":1,"options":["Cleaning Validation","Basic Training in Aseptic Handling Techniques","Impurity Profiling"]},
+        {"code":"BP810RP","name":"Research Project","type":"research_project","hours_per_week":null,"credits":6}
+      ],
+      "total_hours_per_week":22,
+      "total_credits":24
+    }
+  ]
+}
