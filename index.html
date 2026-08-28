@@ -1,107 +1,1124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pharma Study Verse | Pharmacy Education Resources</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Pharma Study Verse | Pharmacy Education & Study Resources</title>
+  <meta name="description" content="Pharma Study Verse provides pharmacy study resources, notes, learning materials, academic resources and student guidance.">
+  <meta name="theme-color" content="#0b2b40">
+  
+  <!-- Open Graph basic -->
+  <meta property="og:title" content="Pharma Study Verse | Pharmacy Education & Study Resources">
+  <meta property="og:description" content="A clean educational platform for pharmacy students — study resources, notes, academic materials and guidance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pharmastudyverse.example">
+  
+  <style>
+    /* -------------------- RESET & BASE -------------------- */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
 
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f7fafb;
-  color:#17324d;
-  line-height:1.6;
-}
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fbfc;
+      color: #1a2e3b;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      width: 100%;
+    }
 
-header{
-  background:#ffffff;
-  border-bottom:1px solid #e3ecef;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
+    /* font fallback completely safe — no external dependency */
+    h1, h2, h3, h4, .brand-name {
+      font-weight: 600;
+      line-height: 1.3;
+    }
 
-.nav{
-  max-width:1100px;
-  margin:auto;
-  padding:16px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:20px;
-  font-weight:700;
-  color:#116b72;
-}
+    ul {
+      list-style: none;
+    }
 
-.logo-mark{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#e7f5f4;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-nav a{
-  text-decoration:none;
-  color:#38556b;
-  margin-left:22px;
-  font-size:14px;
-}
+    button {
+      font: inherit;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: inherit;
+    }
 
-.hero{
-  background:linear-gradient(135deg,#e9f7f6,#f4f8ff);
-  padding:80px 22px;
-}
+    :focus-visible {
+      outline: 3px solid #2a9d8f;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
 
-.hero-inner{
-  max-width:1100px;
-  margin:auto;
-  text-align:center;
-}
+    /* skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #0b2b40;
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0 0 8px 0;
+      z-index: 9999;
+      font-weight: 500;
+    }
+    .skip-link:focus {
+      left: 0;
+    }
 
-.badge{
-  display:inline-block;
-  background:#ffffff;
-  color:#14757b;
-  padding:7px 15px;
-  border-radius:20px;
-  font-size:13px;
-  margin-bottom:18px;
-}
+    /* -------------------- COLOR SYSTEM -------------------- */
+    :root {
+      --navy: #0b2b40;
+      --navy-light: #12405a;
+      --teal: #1a7a6c;
+      --teal-soft: #e2f0ee;
+      --bg-light: #f8fbfc;
+      --bg-blue: #edf3f7;
+      --card-white: #ffffff;
+      --border-soft: #d9e4e8;
+      --text-main: #1a2e3b;
+      --text-muted: #4a5f6b;
+      --shadow-sm: 0 4px 12px rgba(11, 43, 64, 0.06);
+      --shadow-hover: 0 8px 22px rgba(11, 43, 64, 0.1);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: 0.25s ease;
+    }
 
-h1{
-  font-size:clamp(36px,6vw,62px);
-  line-height:1.1;
-  margin-bottom:20px;
-  color:#14344e;
-}
+    /* -------------------- LAYOUT -------------------- */
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
 
-.hero p{
-  max-width:700px;
-  margin:auto;
-  font-size:18px;
-  color:#587083;
-}
+    section {
+      padding: 3.5rem 0;
+    }
 
-.button{
-  display:inline-block;
-  margin-top:28px;
-  padding:13px 24px;
-  background:#14777b;
-  color:white;
-  text-decoration:none;
-  border-radius:8px;
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 650;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      cursor: pointer;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: #bcd9d2;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 1.3rem;
+      margin: 0.5rem 0 0.4rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: var(--teal-soft);
+      color: #0c5e52;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff;
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background var(--transition), transform var(--transition);
+      text-align: center;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #0e5e52;
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+    }
+    .btn-outline:hover {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    /* -------------------- HEADER & NAV -------------------- */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e0ebef;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 650;
+      font-size: 1.35rem;
+      color: var(--navy);
+      letter-spacing: -0.4px;
+    }
+    .brand-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: var(--teal);
+      border-radius: 10px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      font-weight: 500;
+    }
+    .desktop-nav a {
+      color: var(--navy);
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      font-size: 0.98rem;
+    }
+    .desktop-nav a:hover {
+      border-bottom-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 3px;
+      transition: 0.25s;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #ffffff;
+      padding: 1rem 0 1.2rem;
+      border-top: 1px solid var(--border-soft);
+      width: 100%;
+    }
+    .mobile-menu a {
+      padding: 0.85rem 1.25rem;
+      font-weight: 500;
+      color: var(--navy);
+      border-bottom: 1px solid #edf3f7;
+    }
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    /* -------------------- HERO -------------------- */
+    .hero {
+      background: linear-gradient(165deg, #ffffff 0%, #e9f3f1 100%);
+      padding: 4.5rem 0;
+    }
+    .hero-content {
+      max-width: 700px;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* -------------------- SEARCH BAR -------------------- */
+    .search-section {
+      background: white;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid #e3edf0;
+    }
+    .search-wrapper {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .search-input {
+      flex: 1 1 250px;
+      padding: 0.8rem 1.2rem;
+      border: 1.5px solid #cfdfe4;
+      border-radius: 40px;
+      font-size: 1rem;
+      background: #f9fcfd;
+      transition: border-color 0.2s;
+      min-width: 0;
+    }
+    .search-input:focus {
+      border-color: var(--teal);
+      outline: none;
+    }
+    .no-results-msg {
+      color: #8a6d3b;
+      background: #fdf7e7;
+      padding: 0.7rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    /* -------------------- SUBJECTS -------------------- */
+    .subject-filter-bar {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0 1rem;
+    }
+    .filter-btn {
+      padding: 0.45rem 1.2rem;
+      border-radius: 30px;
+      background: #eef4f7;
+      color: var(--navy);
+      font-weight: 500;
+      border: 1px solid #d5e2e6;
+      transition: 0.2s;
+    }
+    .filter-btn.active {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+    .subject-card {
+      background: white;
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 1.2rem 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+    .subject-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: #b9d7cf;
+    }
+    .subject-card h4 {
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    /* -------------------- MODAL -------------------- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(11,43,64,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+    .modal-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal {
+      background: white;
+      border-radius: var(--radius);
+      max-width: 620px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 1.8rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #eef4f7;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      color: var(--navy);
+    }
+    .modal h3 {
+      color: var(--navy);
+      margin-bottom: 1rem;
+      padding-right: 2.5rem;
+    }
+    .modal .resource-list {
+      margin: 1rem 0;
+    }
+    .modal .resource-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #edf3f7;
+      color: var(--text-muted);
+    }
+    .coming-soon {
+      background: #fff8e6;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      font-weight: 500;
+      color: #7a5c1e;
+      margin-top: 1rem;
+    }
+
+    /* -------------------- CHECKLIST & ACCORDION -------------------- */
+    .checklist {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      max-width: 480px;
+    }
+    .checklist label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.55rem 0;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .checklist input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--teal);
+    }
+
+    .accordion-item {
+      background: white;
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      margin-bottom: 0.7rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .accordion-trigger {
+      width: 100%;
+      text-align: left;
+      padding: 1rem 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fafdfe;
+      cursor: pointer;
+    }
+    .accordion-trigger:after {
+      content: "+";
+      font-size: 1.5rem;
+      font-weight: 400;
+      transition: transform 0.2s;
+      color: var(--teal);
+    }
+    .accordion-item.open .accordion-trigger:after {
+      content: "–";
+      transform: rotate(0deg);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 1.2rem;
+      color: var(--text-muted);
+    }
+    .accordion-item.open .accordion-content {
+      max-height: 300px;
+      padding: 0 1.2rem 1.2rem;
+    }
+
+    /* -------------------- CTA & FOOTER -------------------- */
+    .final-cta {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+    }
+    .final-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer {
+      background: #071e2b;
+      color: #cbd8df;
+      padding: 2.5rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      margin: 1.2rem 0;
+    }
+    .footer-links a:hover {
+      color: white;
+    }
+    .footer small {
+      color: #8fa8b5;
+    }
+
+    /* -------------------- RESPONSIVE -------------------- */
+    @media (max-width: 1024px) {
+      .card-grid, .subjects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 2.5rem 0;
+      }
+      .card-grid, .subjects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1rem;
+      }
+      .hero {
+        padding: 3rem 0;
+      }
+      .modal {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">⚕</span>
+        <span class="brand-name">Pharma Study Verse</span>
+      </div>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#resources">Resources</a>
+        <a href="#academic">Academic</a>
+        <a href="#guidance">Guidance</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
+      <a href="#home">Home</a>
+      <a href="#resources">Resources</a>
+      <a href="#academic">Academic</a>
+      <a href="#guidance">Guidance</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <h1>Learn Pharmacy.<br>Build Your Future.</h1>
+        <p>A simple and reliable learning space for pharmacy students, bringing together study resources, notes, academic materials and student guidance.</p>
+        <div class="hero-buttons">
+          <a href="#resources" class="btn">Explore Resources</a>
+          <a href="#academic" class="btn btn-outline">Academic Resources</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH BAR -->
+    <div class="search-section">
+      <div class="container search-wrapper">
+        <input type="search" id="siteSearch" class="search-input" placeholder="Search subjects, resources, notes..." aria-label="Search educational resources">
+        <span id="noResultsMsg" class="no-results-msg">No resources found</span>
+      </div>
+    </div>
+
+    <!-- STUDY RESOURCES -->
+    <section id="resources">
+      <div class="container">
+        <h2 class="section-title">Study Resources</h2>
+        <p class="section-subtitle">Useful academic resources organised for easier learning.</p>
+        <div class="card-grid">
+          <div class="card" data-modal="study-resources-modal">
+            <span class="card-tag">Core</span>
+            <h3>Study Resources</h3>
+            <p>General academic resources for daily pharmacy study.</p>
+          </div>
+          <div class="card" data-modal="notes-modal">
+            <span class="card-tag">Notes</span>
+            <h3>Notes</h3>
+            <p>Well-structured notes across major pharmacy subjects.</p>
+          </div>
+          <div class="card" data-modal="learning-materials-modal">
+            <span class="card-tag">Learning</span>
+            <h3>Learning Materials</h3>
+            <p>Curated learning aids and reference guides.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIC RESOURCES -->
+    <section id="academic" style="background: #f4f9f8;">
+      <div class="container">
+        <h2 class="section-title">Academic Resources</h2>
+        <p class="section-subtitle">Prepare for exams, explore subjects, and plan your academic journey.</p>
+        <div class="card-grid">
+          <div class="card" data-modal="pharmacy-subjects-modal">
+            <span class="card-tag">Subjects</span>
+            <h3>Pharmacy Subjects</h3>
+            <p>Explore core and specialized pharmacy disciplines.</p>
+          </div>
+          <div class="card" data-modal="exam-prep-modal">
+            <span class="card-tag">Exam</span>
+            <h3>Exam Preparation</h3>
+            <p>Revision strategy, checklists, and topic planning.</p>
+          </div>
+          <div class="card" data-modal="academic-materials-modal">
+            <span class="card-tag">Materials</span>
+            <h3>Academic Materials</h3>
+            <p>Supplementary academic content and resources.</p>
+          </div>
+          <div class="card" data-modal="student-guidance-modal">
+            <span class="card-tag">Guidance</span>
+            <h3>Student Guidance</h3>
+            <p>Academic planning and effective study habits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHARMACY SUBJECTS EXPLORER -->
+    <section id="subjects">
+      <div class="container">
+        <h2 class="section-title">Explore Pharmacy Subjects</h2>
+        <p class="section-subtitle">Search or filter to discover subject details.</p>
+        <div class="subject-filter-bar" id="subjectFilterBar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="pharmaceutics">Pharmaceutics</button>
+          <button class="filter-btn" data-filter="chemistry">Chemistry</button>
+          <button class="filter-btn" data-filter="pharmacology">Pharmacology</button>
+          <button class="filter-btn" data-filter="biology">Biology</button>
+          <button class="filter-btn" data-filter="clinical">Clinical</button>
+        </div>
+        <div class="subjects-grid" id="subjectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- NOTES / LEARNING MATERIALS -->
+    <section id="notes-area" style="background: #f4f9f8;">
+      <div class="container">
+        <h2 class="section-title">Notes & Learning Materials</h2>
+        <p class="section-subtitle">Organised study material areas — ready for future additions.</p>
+        <div class="card-grid" id="notesCards">
+          <div class="card" data-modal="generic-notes-modal"><h3>Lecture Notes</h3><p>Subject-wise lecture summaries.</p></div>
+          <div class="card" data-modal="generic-notes-modal"><h3>Unit-wise Notes</h3><p>Notes divided by syllabus units.</p></div>
+          <div class="card" data-modal="generic-notes-modal"><h3>Quick Revision</h3><p>Short notes for fast review.</p></div>
+          <div class="card" data-modal="generic-notes-modal"><h3>Important Questions</h3><p>Key questions for exams.</p></div>
+          <div class="card" data-modal="generic-notes-modal"><h3>Practical Resources</h3><p>Practical lab guides and formats.</p></div>
+          <div class="card" data-modal="generic-notes-modal"><h3>Viva Preparation</h3><p>Common viva questions and answers.</p></div>
+          <div class="card" data-modal="generic-notes-modal"><h3>Study Guides</h3><p>Comprehensive academic guides.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAM PREPARATION -->
+    <section id="exam-prep">
+      <div class="container">
+        <h2 class="section-title">Exam Preparation</h2>
+        <p class="section-subtitle">Plan, track, and revise for university pharmacy exams.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+          <div class="checklist">
+            <h3 style="margin-bottom: 0.8rem; color: var(--navy);">📋 Revision Checklist</h3>
+            <label><input type="checkbox" id="chk1"> Review syllabus</label>
+            <label><input type="checkbox" id="chk2"> Complete unit-wise notes</label>
+            <label><input type="checkbox" id="chk3"> Revise important topics</label>
+            <label><input type="checkbox" id="chk4"> Practice questions</label>
+            <label><input type="checkbox" id="chk5"> Final revision</label>
+          </div>
+          <div style="flex:1; min-width:260px;">
+            <h3 style="color:var(--navy); margin-bottom:0.8rem;">Exam Tips</h3>
+            <ul style="color:var(--text-muted);">
+              <li>• Start early and follow a consistent schedule</li>
+              <li>• Use active recall and spaced repetition</li>
+              <li>• Solve previous years' papers (when available)</li>
+              <li>• Keep concise notes for final revision</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT GUIDANCE (FAQ) -->
+    <section id="guidance" style="background: #f4f9f8;">
+      <div class="container">
+        <h2 class="section-title">Student Guidance</h2>
+        <p class="section-subtitle">Practical advice for pharmacy students.</p>
+        <div class="accordion" id="guidanceAccordion">
+          <div class="accordion-item">
+            <button class="accordion-trigger">How to study pharmacy effectively</button>
+            <div class="accordion-content"><p>Focus on understanding mechanisms rather than rote memorization. Connect concepts across subjects.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">How to prepare for university exams</button>
+            <div class="accordion-content"><p>Create a topic-wise plan, revise regularly, and practice with sample questions. Use checklists.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Practical / viva preparation</button>
+            <div class="accordion-content"><p>Understand procedures, practice explanations aloud, and review common viva topics.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Notes organisation</button>
+            <div class="accordion-content"><p>Maintain subject-wise, unit-wise notes. Use highlighting and summaries for quick revision.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Academic planning</button>
+            <div class="accordion-content"><p>Set weekly goals, balance subjects, and track progress with a simple planner.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Career awareness</button>
+            <div class="accordion-content"><p>Stay informed about pharmacy career paths — industry, clinical, research, and regulatory roles.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container" style="max-width: 800px;">
+        <h2 class="section-title">About Pharma Study Verse</h2>
+        <p style="color:var(--text-muted); font-size:1.05rem;">Pharma Study Verse is an educational platform focused on pharmacy students and academic learning. Our aim is to make useful study resources easier to discover, access and use.</p>
+        <p style="color:var(--text-muted); margin-top:0.8rem;">This website is independently created and not affiliated with any university, government body, or regulatory authority.</p>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Keep Learning. Keep Growing.</h2>
+        <p style="margin-bottom:1.5rem;">Explore pharmacy education resources designed with students in mind.</p>
+        <a href="#resources" class="btn" style="background:white; color:var(--navy);">Start Learning</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div style="font-weight:600; font-size:1.2rem; color:white;">Pharma Study Verse</div>
+      <p style="margin-top:0.4rem;">Pharmacy Education • Study Resources • Student Guidance</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#resources">Resources</a>
+        <a href="#academic">Academic</a>
+        <a href="#guidance">Guidance</a>
+        <a href="#about">About</a>
+      </div>
+      <small>© 2026 Pharma Study Verse. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- MODALS CONTAINER -->
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" id="modalContent">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // Data for pharmacy subjects (easy to extend later)
+      const subjectsData = [
+        { name: "Pharmaceutics", category: "pharmaceutics", desc: "Study of drug formulation, manufacturing, and delivery systems." },
+        { name: "Pharmaceutical Chemistry", category: "chemistry", desc: "Chemical aspects of drug design, synthesis, and analysis." },
+        { name: "Pharmacology", category: "pharmacology", desc: "Drug actions, mechanisms, therapeutic uses, and side effects." },
+        { name: "Pharmacognosy", category: "biology", desc: "Natural drug sources, phytochemistry, and herbal medicine." },
+        { name: "Pharmaceutical Analysis", category: "chemistry", desc: "Analytical techniques for quality control and assurance." },
+        { name: "Human Anatomy & Physiology", category: "biology", desc: "Structure and function of the human body systems." },
+        { name: "Biochemistry", category: "biology", desc: "Chemical processes within living organisms." },
+        { name: "Microbiology", category: "biology", desc: "Microorganisms and their relevance to pharmacy and health." },
+        { name: "Pathophysiology", category: "clinical", desc: "Disease mechanisms and physiological alterations." },
+        { name: "Hospital & Clinical Pharmacy", category: "clinical", desc: "Patient care, drug therapy management, and hospital practice." },
+        { name: "Community Pharmacy", category: "clinical", desc: "Retail pharmacy, patient counseling, and public health." },
+        { name: "Pharmacy Practice", category: "clinical", desc: "Professional practice standards and ethics." }
+      ];
+
+      const subjectsGrid = document.getElementById('subjectsGrid');
+      const subjectFilterBar = document.getElementById('subjectFilterBar');
+      const siteSearch = document.getElementById('siteSearch');
+      const noResultsMsg = document.getElementById('noResultsMsg');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const modalOverlay = document.getElementById('modalOverlay');
+      const modalBody = document.getElementById('modalBody');
+      const modalClose = document.getElementById('modalClose');
+
+      // Render subjects
+      function renderSubjects(filter = 'all', searchQuery = '') {
+        subjectsGrid.innerHTML = '';
+        let filtered = subjectsData.filter(s => {
+          const matchesFilter = filter === 'all' || s.category === filter;
+          const matchesSearch = s.name.toLowerCase().includes(searchQuery.toLowerCase());
+          return matchesFilter && matchesSearch;
+        });
+        if (filtered.length === 0) {
+          subjectsGrid.innerHTML = '<p style="color:var(--text-muted);">No subjects match your search.</p>';
+          return;
+        }
+        filtered.forEach(subject => {
+          const card = document.createElement('div');
+          card.className = 'subject-card';
+          card.tabIndex = 0;
+          card.setAttribute('role', 'button');
+          card.setAttribute('aria-label', `Open ${subject.name}`);
+          card.innerHTML = `<h4>${subject.name}</h4><small style="color:var(--text-muted);">${subject.category}</small>`;
+          card.addEventListener('click', () => openSubjectModal(subject));
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openSubjectModal(subject);
+            }
+          });
+          subjectsGrid.appendChild(card);
+        });
+      }
+
+      function openSubjectModal(subject) {
+        const modalHtml = `
+          <h3>${subject.name}</h3>
+          <p>${subject.desc}</p>
+          <div class="resource-list">
+            <h4>Resource categories</h4>
+            <ul>
+              <li>• Lecture notes</li>
+              <li>• Unit-wise summaries</li>
+              <li>• Important questions</li>
+              <li>• Revision material</li>
+            </ul>
+          </div>
+          <div class="coming-soon">Resources are being organised and will be added here.</div>
+        `;
+        openModal(modalHtml);
+      }
+
+      // General modal opening function
+      function openModal(html) {
+        modalBody.innerHTML = html;
+        modalOverlay.classList.add('show');
+        modalOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        modalClose.focus();
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove('show');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      // Card modals for study resources & academic
+      const modalContentMap = {
+        'study-resources-modal': `
+          <h3>Study Resources</h3>
+          <p>Organised educational resources for pharmacy students.</p>
+          <div class="resource-list"><ul>
+            <li>• Pharmaceutics</li><li>• Pharmaceutical Chemistry</li><li>• Pharmacology</li>
+            <li>• Pharmacognosy</li><li>• Human Anatomy & Physiology</li><li>• Biochemistry</li>
+            <li>• Microbiology</li><li>• Pharmaceutical Analysis</li>
+          </ul></div>
+          <div class="coming-soon">Coming soon — resources will be added here.</div>
+        `,
+        'notes-modal': `
+          <h3>Notes</h3>
+          <p>Structured notes for core pharmacy subjects.</p>
+          <div class="resource-list"><ul>
+            <li>• Unit-wise notes</li><li>• Summary sheets</li><li>• Key definitions</li>
+          </ul></div>
+          <div class="coming-soon">Notes are being organised and will be available soon.</div>
+        `,
+        'learning-materials-modal': `
+          <h3>Learning Materials</h3>
+          <p>Curated reference and supplementary materials.</p>
+          <div class="resource-list"><ul>
+            <li>• Subject guides</li><li>• Quick reference sheets</li><li>• Practical resources</li>
+          </ul></div>
+          <div class="coming-soon">Coming soon.</div>
+        `,
+        'pharmacy-subjects-modal': `
+          <h3>Pharmacy Subjects</h3>
+          <p>Explore all core subjects in the pharmacy curriculum.</p>
+          <div class="resource-list"><ul>
+            <li>• Pharmaceutics</li><li>• Pharmaceutical Chemistry</li><li>• Pharmacology</li>
+            <li>• Pharmacognosy</li><li>• Analysis</li><li>• Clinical Pharmacy</li>
+          </ul></div>
+          <div class="coming-soon">Subject explorer available above.</div>
+        `,
+        'exam-prep-modal': `
+          <h3>Exam Preparation</h3>
+          <p>Strategies and checklists for exam success.</p>
+          <div class="resource-list"><ul>
+            <li>• Revision strategy</li><li>• Important topics tracker</li>
+            <li>• Exam planning</li><li>• Quick revision resources</li>
+          </ul></div>
+          <div class="coming-soon">Previous question papers will be added when available.</div>
+        `,
+        'academic-materials-modal': `
+          <h3>Academic Materials</h3>
+          <p>Additional resources to support your learning.</p>
+          <div class="resource-list"><ul>
+            <li>• Study planners</li><li>• Reference lists</li><li>• Practical manuals (upcoming)</li>
+          </ul></div>
+          <div class="coming-soon">Coming soon.</div>
+        `,
+        'student-guidance-modal': `
+          <h3>Student Guidance</h3>
+          <p>Practical tips for academic and career growth.</p>
+          <div class="resource-list"><ul>
+            <li>• Effective study habits</li><li>• Viva preparation</li><li>• Career awareness</li>
+          </ul></div>
+          <div class="coming-soon">More guidance articles coming soon.</div>
+        `,
+        'generic-notes-modal': `
+          <h3>Learning Material</h3>
+          <p>This area is prepared for future study resources.</p>
+          <div class="coming-soon">Resources are being organised and will be added here.</div>
+        `
+      };
+
+      document.querySelectorAll('.card[data-modal]').forEach(card => {
+        card.addEventListener('click', () => {
+          const modalId = card.getAttribute('data-modal');
+          const html = modalContentMap[modalId] || '<p>Content coming soon.</p>';
+          openModal(html);
+        });
+      });
+
+      // Notes cards specifically
+      document.querySelectorAll('#notesCards .card').forEach(card => {
+        card.addEventListener('click', () => {
+          openModal(modalContentMap['generic-notes-modal']);
+        });
+      });
+
+      // Modal close handlers
+      modalClose.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('show')) closeModal();
+      });
+
+      // Mobile menu toggle
+      hamburgerBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        hamburgerBtn.classList.toggle('active', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          hamburgerBtn.classList.remove('active');
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Subject filter buttons
+      subjectFilterBar.addEventListener('click', (e) => {
+        if (e.target.classList.contains('filter-btn')) {
+          subjectFilterBar.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+          const filter = e.target.getAttribute('data-filter');
+          renderSubjects(filter, siteSearch.value);
+        }
+      });
+
+      // Site search (filters subjects and hides/shows resource cards)
+      siteSearch.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const activeFilterBtn = subjectFilterBar.querySelector('.filter-btn.active');
+        const filter = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+        renderSubjects(filter, query);
+
+        // Filter visible resource cards (study, academic, notes)
+        const allCards = document.querySelectorAll('.card');
+        let visibleCount = 0;
+        allCards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          const match = query === '' || text.includes(query);
+          card.style.display = match ? '' : 'none';
+          if (match) visibleCount++;
+        });
+        if (visibleCount === 0 && query !== '') {
+          noResultsMsg.style.display = 'inline-block';
+        } else {
+          noResultsMsg.style.display = 'none';
+        }
+      });
+
+      // Accordion functionality
+      const accordionItems = document.querySelectorAll('.accordion-item');
+      accordionItems.forEach(item => {
+        const trigger = item.querySelector('.accordion-trigger');
+        trigger.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+          accordionItems.forEach(i => i.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+
+      // Initial render
+      renderSubjects('all', '');
+    })();
+  </script>
+</body>
+</html>  border-radius:8px;
   font-weight:600;
 }
 
