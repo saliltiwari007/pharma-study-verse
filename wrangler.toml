@@ -1,4 +1,7 @@
 name = "pharma-study-verse"
-pages_build_output_dir = "."
 compatibility_date = "2026-08-28"
 send_metrics = false
+
+[assets]
+directory = "."
+exclude = ["docs/**", ".github/**"]
