@@ -1,7 +1,15 @@
 name = "pharma-study-verse"
+main = "worker.js"
 compatibility_date = "2026-08-28"
 send_metrics = false
 
 [assets]
 directory = "."
 exclude = ["docs/**", ".github/**"]
+
+# After creating the D1 database in Cloudflare, add its binding here or
+# configure the DB binding in the Cloudflare Worker dashboard:
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "pharma-study-verse-scores"
+# database_id = "YOUR_D1_DATABASE_ID"
