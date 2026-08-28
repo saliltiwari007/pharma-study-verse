@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "name": "Subject-wise Interactive EduGame Zone",
+  "purpose": "Turn approved pharmacy curriculum content into short, engaging, subject-linked learning games without replacing serious study or assessment.",
+  "principles": [
+    "Every game must map to a programme, semester, subject and topic where possible.",
+    "Games reinforce learning; game scores must not be treated as official academic marks unless explicitly configured as an assessment.",
+    "Use approved content/question pools as the factual source.",
+    "Randomize questions, choices, rounds and item order to reduce answer-sharing.",
+    "Do not expose answer keys in the client before an answer is submitted.",
+    "Keep sessions short and mobile-friendly.",
+    "Avoid manipulative mechanics, forced ads or interruptions during active play.",
+    "Accessibility is required: keyboard support, readable text, non-colour-only feedback and reduced-motion support.",
+    "Suspicious gameplay patterns may be flagged, but a flag is not proof of cheating."
+  ],
+  "game_types": [
+    {"id":"rapid_mcq", "name":"Rapid Fire", "description":"Short timed topic rounds using randomized approved MCQs."},
+    {"id":"match_pairs", "name":"Match the Pairs", "description":"Match terms with definitions, drugs with classes, concepts with examples or other approved relationships."},
+    {"id":"flash_sort", "name":"Sort It Right", "description":"Arrange items into the correct category, sequence or workflow."},
+    {"id":"identify_concept", "name":"Identify the Concept", "description":"Identify a pharmacy concept from a short clue, scenario or approved visual."},
+    {"id":"case_challenge", "name":"Case Challenge", "description":"Choose the most appropriate educational response to a syllabus-linked scenario."},
+    {"id":"true_false", "name":"True or False", "description":"Fast concept-check rounds with randomized statements."},
+    {"id":"fill_gap", "name":"Fill the Gap", "description":"Complete a missing term, step or concept from approved learning material."},
+    {"id":"memory_cards", "name":"Memory Cards", "description":"Pair related approved concepts for spaced recall practice."},
+    {"id":"drug_class_match", "name":"Drug Class Match", "description":"Practice drug/class/indication relationships where supported by the approved content."},
+    {"id":"lab_sequence", "name":"Lab Sequence", "description":"Order approved practical steps or laboratory workflows correctly."}
+  ],
+  "subject_examples": [
+    "Pharmaceutical Chemistry",
+    "Pharmaceutics",
+    "Pharmacology",
+    "Pharmacognosy",
+    "Pharmaceutical Analysis",
+    "Human Anatomy and Physiology",
+    "Pathophysiology",
+    "Biochemistry",
+    "Microbiology",
+    "Medicinal Chemistry",
+    "Industrial Pharmacy",
+    "Pharmaceutical Jurisprudence",
+    "Clinical Pharmacy",
+    "Pharmacovigilance",
+    "Regulatory Affairs",
+    "Any future approved subject in the curriculum registry"
+  ],
+  "difficulty": ["foundation", "easy", "moderate", "hard", "challenge"],
+  "progress": {
+    "track": ["games_played", "accuracy", "topic_coverage", "streak", "personal_best", "mastery_signals"],
+    "rule": "Use game performance primarily for formative feedback and engagement. Do not infer academic mastery from one game session."
+  },
+  "anti_abuse": {
+    "requirements": [
+      "Server-authoritative sessions when backend is implemented.",
+      "Fresh randomized item selection from controlled pools.",
+      "Option/order randomization where pedagogically valid.",
+      "Rate limits and attempt controls.",
+      "Do not award leaderboard points for invalid or incomplete sessions.",
+      "Record audit events for high-value competitive modes.",
+      "Do not reveal whether an answer is correct until the intended feedback point."
+    ]
+  },
+  "monetization": {
+    "policy": "Ads may appear in non-active-play surfaces, but must not obscure questions, interrupt an active round or incentivize unsafe behaviour.",
+    "premium_candidates": ["advanced analytics", "custom practice packs", "ad-free experience", "extended challenge modes"],
+    "rule": "Never sell academic accuracy, official certification or guaranteed outcomes."
+  },
+  "content_governance": {
+    "source": "Approved content library and verified curriculum mappings",
+    "ai_generation": "AI may propose new game items from approved material, but generated items remain draft until configured approval is completed.",
+    "global_disclaimer": "Games are educational practice tools. Scores and rankings do not guarantee examination, employment, admission or career outcomes."
+  }
+}
