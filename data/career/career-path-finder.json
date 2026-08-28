@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "name": "Pharmacy Career Path Finder",
+  "purpose": "Help pharmacy students explore suitable career directions from interests, strengths, preferred work style, academic performance, constraints and goals.",
+  "important_disclaimer": "This is a guidance and self-reflection tool, not a professional, medical, legal, admissions or employment guarantee. Recommendations are ranked pathways, not absolute predictions.",
+  "official_context": {
+    "pci": "PCI lists D.Pharm, B.Pharm, B.Pharm (Practice), Pharm.D and M.Pharm among approved pharmacy courses.",
+    "ncs": "National Career Service provides career information, job search, counselling and skill resources, including healthcare and pharmacy-related pathways."
+  },
+  "question_dimensions": [
+    "current_program_and_year",
+    "subjects_and_strengths",
+    "interests",
+    "work_style",
+    "people_vs_lab_vs_data_preference",
+    "government_vs_private_preference",
+    "higher_study_interest",
+    "entrepreneurship_interest",
+    "research_interest",
+    "communication_and_sales_comfort",
+    "patient_interaction_preference",
+    "regulatory_and_documentation_interest",
+    "analytical_and_lab_interest",
+    "technology_and_ai_interest",
+    "exam_preparation_tolerance",
+    "time_to_income_preference",
+    "mobility_and_location_constraints",
+    "financial_constraints",
+    "long_term_ambition"
+  ],
+  "pathways": [
+    {"id":"m_pharm", "label":"M.Pharm / postgraduate specialization", "signals":["higher_study_interest","research_interest","subject_specialization","academic_interest"], "possible_outcomes":["specialized_industry_roles","research","academics","regulatory/technical roles"], "next_steps":["choose specialization based on interests and target roles","compare current admission rules and institutions","build subject depth and research skills"]},
+    {"id":"government_pharmacist", "label":"Government Pharmacist pathway", "signals":["government_preference","exam_preparation_tolerance","pharmacy_practice_interest"], "possible_outcomes":["government pharmacist recruitment opportunities"], "next_steps":["track current official recruitment notifications","map eligibility","build exam-specific preparation plan"]},
+    {"id":"railway_pharmacist", "label":"Railway Pharmacist pathway", "signals":["government_preference","competitive_exam_interest","pharmacist_role_interest"], "possible_outcomes":["Railway pharmacist recruitment when eligible vacancies are notified"], "next_steps":["verify the latest RRB notification and eligibility","prepare pharmacy and general sections according to the current notice"]},
+    {"id":"drug_inspector", "label":"Drug Inspector pathway", "signals":["regulatory_interest","law_interest","quality_interest","analytical_interest","government_preference"], "possible_outcomes":["drug regulatory inspection roles where eligible"], "next_steps":["verify current recruiting authority eligibility","study applicable drug laws/rules and technical subjects","build regulatory and inspection knowledge"]},
+    {"id":"drug_analyst", "label":"Drug Analyst / analytical pathway", "signals":["analytical_interest","laboratory_interest","chemistry_strength","quality_interest"], "possible_outcomes":["analytical laboratory and quality-related roles where eligible"], "next_steps":["strengthen pharmaceutical analysis and instrumental methods","build laboratory documentation and quality skills","verify role-specific eligibility"]},
+    {"id":"pharmaceutical_industry", "label":"Pharmaceutical Industry", "signals":["private_preference","industry_interest"], "possible_outcomes":["production","quality control","quality assurance","formulation","technical functions"], "next_steps":["identify preferred function","build role-specific skills","seek relevant internships/projects"]},
+    {"id":"regulatory_affairs", "label":"Regulatory Affairs", "signals":["regulatory_interest","documentation_interest","law_interest","international_interest"], "possible_outcomes":["regulatory documentation and compliance roles"], "next_steps":["learn regulatory frameworks","develop technical writing/documentation skills","follow current regulatory requirements"]},
+    {"id":"pharmacovigilance_clinical", "label":"Pharmacovigilance / Clinical Research", "signals":["patient_safety_interest","clinical_interest","data_interest","documentation_interest"], "possible_outcomes":["drug safety","clinical research","clinical data-related roles"], "next_steps":["strengthen pharmacology, clinical and safety concepts","learn relevant documentation and data practices","seek supervised project/internship experience"]},
+    {"id":"medical_sales_marketing", "label":"Pharmaceutical Marketing / Medical Sales", "signals":["communication_strength","sales_comfort","people_interaction","entrepreneurship_interest"], "possible_outcomes":["medical representative","product/brand roles","sales and marketing"], "next_steps":["develop communication and presentation skills","learn ethical product communication","build commercial and market understanding"]},
+    {"id":"community_hospital_pharmacy", "label":"Hospital / Community Pharmacy", "signals":["patient_interaction","practice_interest","service_orientation"], "possible_outcomes":["hospital/community pharmacy and patient-care related roles where eligible"], "next_steps":["strengthen dispensing, counselling and medication-safety skills","verify registration and local eligibility requirements"]},
+    {"id":"research_academia", "label":"Research / Academia", "signals":["research_interest","teaching_interest","higher_study_interest","writing_interest"], "possible_outcomes":["research projects","higher education","academic roles subject to qualifications"], "next_steps":["build research methodology and scientific writing","participate in supervised research","plan postgraduate/doctoral pathway if appropriate"]},
+    {"id":"pharma_entrepreneurship", "label":"Pharma Entrepreneurship / Business", "signals":["entrepreneurship_interest","business_interest","risk_tolerance","communication_strength"], "possible_outcomes":["pharmacy/business ventures subject to law and licensing","healthcare/pharma commercial roles"], "next_steps":["identify a lawful business model","study licensing/compliance","build financial and operational skills"]},
+    {"id":"pharma_ai_data", "label":"Pharma + AI / Data", "signals":["technology_interest","data_interest","ai_interest","programming_interest"], "possible_outcomes":["pharma analytics","digital health/pharma technology","AI-enabled research and operations"], "next_steps":["learn statistics, data handling and relevant AI tools","build portfolio projects tied to pharmacy problems"]}
+  ],
+  "recommendation_method": {
+    "type": "weighted_multi_pathway_profile",
+    "rules": [
+      "Never force a single career choice when multiple pathways have comparable evidence.",
+      "Return top 3 pathways with fit reasons, concerns, skill gaps and a practical 30/90/365-day plan.",
+      "Separate user-stated preferences from inferred signals.",
+      "Show confidence as low/medium/high based on answer consistency, not as a probability of career success.",
+      "Explain what additional information could change the recommendation.",
+      "Do not promise salary, job, admission, rank or selection outcomes.",
+      "For regulated or recruitment-specific routes, require verification against the latest official notification before giving eligibility claims."
+    ]
+  },
+  "student_output": [
+    "career_profile_summary",
+    "top_3_recommended_paths",
+    "why_each_path_fits",
+    "possible_mismatch_risks",
+    "skills_to_build",
+    "subjects_to_strengthen",
+    "recommended_exams_or_higher_study_options",
+    "30_day_action_plan",
+    "90_day_action_plan",
+    "12_month_action_plan",
+    "official_sources_to_check",
+    "motivation_and_next_step"
+  ],
+  "safety_and_quality": [
+    "Do not discriminate on protected characteristics.",
+    "Do not present psychological diagnosis or personality diagnosis.",
+    "Do not claim that one path is objectively best for every student.",
+    "Keep recommendations revisable as the student's interests, grades and goals change.",
+    "For high-stakes admissions, recruitment or regulatory eligibility, link to or cite the current official authority source."
+  ]
+}
