@@ -1,10 +1,21 @@
 {
-  "version": 1,
+  "version": 2,
   "principles": {
     "serverAuthoritative": true,
     "clientTrust": false,
     "answerKeysPublic": false,
-    "persistentScoresClientOnly": false
+    "persistentScoresClientOnly": false,
+    "diagnosticIsNotCredential": true
+  },
+  "modes": {
+    "baselineDiagnostic": {
+      "purpose": "measure current preparation and identify weak domains before revision",
+      "resultDimensions": ["overallScore", "accuracy", "attemptedCoverage", "domainScores", "readinessBand"],
+      "peerComparison": "server_only_after_shared_attempt_data_exists"
+    },
+    "practice": {"purpose": "learning and active recall", "ranked": false},
+    "assessment": {"purpose": "controlled performance measurement", "ranked": true},
+    "challenge": {"purpose": "high-discrimination competitive performance", "ranked": true}
   },
   "delivery": {
     "questionPoolSelection": "randomized",
@@ -30,6 +41,7 @@
     "tiesUseSecondaryMetrics": true,
     "activitySpecificRanks": true,
     "subjectSpecificRanks": true,
-    "overallRank": true
+    "overallRank": true,
+    "minimumSharedAttemptsBeforePeerPercentile": true
   }
 }
