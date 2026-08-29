@@ -2,3 +2,7 @@
 /* Navigation density guard: keep the desktop header calm and move to the compact menu before labels become cramped. */
 @media(min-width:901px) and (max-width:1120px){.nav{gap:8px}.brand{font-size:.88rem}.navlinks{gap:2px}.navlinks a{padding:7px 5px;font-size:.71rem}.nav-cta{padding:8px 8px!important}}
 @media(max-width:900px){.site-header{position:sticky}.mobile-nav{box-shadow:0 8px 18px rgba(11,43,64,.06)}}
+/* Final responsive polish: protect cards, forms and game controls on narrow screens. */
+@media(max-width:900px){.container{width:min(100% - 24px,1120px)}.card,.hero-panel,.notice{overflow-wrap:anywhere}.search{flex-direction:column}.search .btn{width:100%}.page-head{margin-bottom:20px}.section{padding:32px 0}.metrics{gap:10px}.metric strong{font-size:1.45rem}}
+@media(max-width:640px){.nav{min-height:60px}.brand{font-size:.9rem}.brand-mark{width:34px;height:34px}.hero{padding:42px 0 32px}.hero h1{font-size:clamp(2rem,10vw,2.6rem)}.page-head h1{font-size:1.8rem}.grid{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.btn{min-height:44px}.filter{min-height:40px}.side{position:static}.footer{padding:30px 0}}
+@media(max-width:380px){.container{width:calc(100% - 18px)}.metrics{grid-template-columns:1fr}.nav{gap:6px}}
