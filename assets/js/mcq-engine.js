@@ -6,8 +6,7 @@
   const state = {
     questions: [],
     currentIndex: 0,
-    answers: [],
-    selectedAnswers: {},
+    userAnswers: {},
     score: 0,
     accuracy: 0,
     filters: {
@@ -17,7 +16,9 @@
     },
     isLoaded: false,
     quizActive: false,
-    quizComplete: false
+    quizComplete: false,
+    showFeedback: false,
+    feedbackData: null
   };
 
   // Load MCQ data
@@ -56,7 +57,7 @@
         return false;
       }
       // Check other required fields
-      if (!q.domain || !q.difficulty || !q.explanation) {
+      if (!q.domain || !q.difficulty) {
         console.warn('Missing fields in MCQ:', q.id);
         return false;
       }
@@ -106,7 +107,8 @@
 
     return {
       options: options.map(o => o.text),
-      answer: newAnswer
+      answer: newAnswer,
+      originalQuestion: question
     };
   }
 
@@ -120,23 +122,48 @@
 
     state.questions = selected;
     state.currentIndex = 0;
-    state.answers = new Array(selected.length).fill(null);
-    state.selectedAnswers = {};
+    state.userAnswers = {};
     state.score = 0;
+    state.accuracy = 0;
     state.quizActive = true;
     state.quizComplete = false;
+    state.showFeedback = false;
+    state.feedbackData = null;
 
     renderQuiz();
   }
 
-  // Record answer
+  // Record answer and show immediate feedback
   function recordAnswer(index) {
-    state.selectedAnswers[state.currentIndex] = index;
-    highlightAnswer(index);
+    if (state.showFeedback) return; // Prevent changing answer after feedback
+    
+    state.userAnswers[state.currentIndex] = index;
+    const q = state.questions[state.currentIndex];
+    const shuffled = shuffleOptionsWithAnswerTracking(q);
+    const isCorrect = index === shuffled.answer;
+    
+    state.feedbackData = {
+      userIndex: index,
+      correctIndex: shuffled.answer,
+      isCorrect: isCorrect,
+      question: q,
+      shuffledOptions: shuffled.options
+    };
+    
+    state.showFeedback = true;
+    renderFeedback();
   }
 
   // Move to next question
   function nextQuestion() {
+    if (!state.showFeedback) {
+      renderError('Please select an answer to continue.');
+      return;
+    }
+
+    state.showFeedback = false;
+    state.feedbackData = null;
+
     if (state.currentIndex < state.questions.length - 1) {
       state.currentIndex++;
       renderQuiz();
@@ -149,6 +176,8 @@
   function previousQuestion() {
     if (state.currentIndex > 0) {
       state.currentIndex--;
+      state.showFeedback = false;
+      state.feedbackData = null;
       renderQuiz();
     }
   }
@@ -157,9 +186,19 @@
   function finishQuiz() {
     // Calculate score
     let correct = 0;
+    let incorrect = 0;
+    let skipped = 0;
+
     state.questions.forEach((q, idx) => {
-      if (state.selectedAnswers[idx] === q.answer) {
+      const userAnswer = state.userAnswers[idx];
+      const shuffled = shuffleOptionsWithAnswerTracking(q);
+      
+      if (userAnswer === undefined) {
+        skipped++;
+      } else if (userAnswer === shuffled.answer) {
         correct++;
+      } else {
+        incorrect++;
       }
     });
 
@@ -174,12 +213,13 @@
   // Restart quiz
   function restartQuiz() {
     state.currentIndex = 0;
-    state.answers = [];
-    state.selectedAnswers = {};
+    state.userAnswers = {};
     state.score = 0;
     state.accuracy = 0;
     state.quizActive = false;
     state.quizComplete = false;
+    state.showFeedback = false;
+    state.feedbackData = null;
     renderHub();
   }
 
@@ -236,12 +276,14 @@
         </div>
 
         <div class="mcq-info">
-          <p><strong>Tips:</strong></p>
+          <p><strong>How it works:</strong></p>
           <ul>
+            <li>Select your preferred subject and difficulty level</li>
             <li>Questions are shuffled randomly each time</li>
-            <li>Options are randomized for each question</li>
-            <li>Full explanations provided after each answer</li>
-            <li>Track your score and accuracy at the end</li>
+            <li>Answer each question and see immediate feedback</li>
+            <li>View the correct answer and explanation</li>
+            <li>Get your final score and accuracy at the end</li>
+            <li>Review all your answers with full explanations</li>
           </ul>
         </div>
       </div>
@@ -270,15 +312,14 @@
 
     const q = state.questions[state.currentIndex];
     const shuffled = shuffleOptionsWithAnswerTracking(q);
-    const selected = state.selectedAnswers[state.currentIndex];
     const progress = ((state.currentIndex + 1) / state.questions.length) * 100;
 
     let optionsHTML = shuffled.options.map((opt, idx) => {
-      const isSelected = selected === idx;
-      const optionClass = isSelected ? 'selected' : '';
+      const optionClass = '';
       return `
         <button class="option-btn ${optionClass}" data-index="${idx}">
-          ${String.fromCharCode(65 + idx)}. ${escapeHtml(opt)}
+          <span class="option-letter">${String.fromCharCode(65 + idx)}.</span>
+          <span class="option-text">${escapeHtml(opt)}</span>
         </button>
       `;
     }).join('');
@@ -307,7 +348,7 @@
 
           <div class="quiz-navigation">
             <button id="prev-btn" class="btn-secondary" ${state.currentIndex === 0 ? 'disabled' : ''}>← Previous</button>
-            <button id="next-btn" class="btn-primary">${state.currentIndex === state.questions.length - 1 ? 'Finish' : 'Next'} →</button>
+            <span class="nav-spacer"></span>
           </div>
         </div>
       </div>
@@ -321,25 +362,97 @@
     });
 
     // Navigation
-    document.getElementById('prev-btn').addEventListener('click', previousQuestion);
-    document.getElementById('next-btn').addEventListener('click', () => {
-      if (state.selectedAnswers[state.currentIndex] === undefined) {
-        alert('Please select an answer before continuing.');
-        return;
-      }
-      nextQuestion();
-    });
+    const prevBtn = document.getElementById('prev-btn');
+    if (prevBtn && !prevBtn.disabled) {
+      prevBtn.addEventListener('click', previousQuestion);
+    }
   }
 
-  // Highlight selected answer
-  function highlightAnswer(index) {
-    document.querySelectorAll('.option-btn').forEach((btn, idx) => {
-      if (idx === index) {
-        btn.classList.add('selected');
-      } else {
-        btn.classList.remove('selected');
+  // Render Feedback Screen
+  function renderFeedback() {
+    const container = document.getElementById('mcq-container');
+    if (!container || !state.feedbackData) return;
+
+    const fb = state.feedbackData;
+    const progress = ((state.currentIndex + 1) / state.questions.length) * 100;
+
+    let optionsHTML = fb.shuffledOptions.map((opt, idx) => {
+      let optionClass = '';
+      if (idx === fb.correctIndex) {
+        optionClass = 'correct';
+      } else if (idx === fb.userIndex && !fb.isCorrect) {
+        optionClass = 'incorrect';
       }
-    });
+      
+      const isSelected = idx === fb.userIndex;
+      const isCorrect = idx === fb.correctIndex;
+      
+      let badge = '';
+      if (isCorrect) {
+        badge = '<span class="answer-badge correct-badge">✓ Correct</span>';
+      } else if (isSelected && !fb.isCorrect) {
+        badge = '<span class="answer-badge incorrect-badge">✗ Your answer</span>';
+      }
+
+      return `
+        <div class="option-feedback ${optionClass}">
+          <span class="option-letter">${String.fromCharCode(65 + idx)}.</span>
+          <span class="option-text">${escapeHtml(opt)}</span>
+          ${badge}
+        </div>
+      `;
+    }).join('');
+
+    const feedbackMessage = fb.isCorrect 
+      ? '<div class="feedback-correct"><strong>✓ Correct!</strong> Well done.</div>'
+      : '<div class="feedback-incorrect"><strong>✗ Incorrect.</strong> The correct answer is shown below.</div>';
+
+    container.innerHTML = `
+      <div class="mcq-quiz">
+        <div class="quiz-header">
+          <div class="quiz-progress">
+            <span class="question-counter">Question ${state.currentIndex + 1} of ${state.questions.length}</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: ${progress}%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-content">
+          <div class="question-box">
+            <span class="domain-badge">${escapeHtml(fb.question.domain)}</span>
+            <span class="difficulty-badge ${fb.question.difficulty}">${fb.question.difficulty.toUpperCase()}</span>
+            <h3 class="question-text">${escapeHtml(fb.question.question)}</h3>
+          </div>
+
+          ${feedbackMessage}
+
+          <div class="options-container feedback-options">
+            ${optionsHTML}
+          </div>
+
+          ${fb.question.explanation ? `
+            <div class="explanation-box">
+              <strong>Explanation:</strong>
+              <p>${escapeHtml(fb.question.explanation)}</p>
+            </div>
+          ` : ''}
+
+          <div class="quiz-navigation">
+            <button id="prev-btn" class="btn-secondary" ${state.currentIndex === 0 ? 'disabled' : ''}>← Previous</button>
+            <button id="next-btn" class="btn-primary">${state.currentIndex === state.questions.length - 1 ? 'See Results' : 'Next Question'} →</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Navigation
+    const prevBtn = document.getElementById('prev-btn');
+    if (prevBtn && !prevBtn.disabled) {
+      prevBtn.addEventListener('click', previousQuestion);
+    }
+
+    document.getElementById('next-btn').addEventListener('click', nextQuestion);
   }
 
   // Render Results
@@ -349,13 +462,15 @@
 
     let correct = 0;
     let incorrect = 0;
-    let unanswered = 0;
+    let skipped = 0;
 
     state.questions.forEach((q, idx) => {
-      const userAnswer = state.selectedAnswers[idx];
+      const userAnswer = state.userAnswers[idx];
+      const shuffled = shuffleOptionsWithAnswerTracking(q);
+      
       if (userAnswer === undefined) {
-        unanswered++;
-      } else if (userAnswer === q.answer) {
+        skipped++;
+      } else if (userAnswer === shuffled.answer) {
         correct++;
       } else {
         incorrect++;
@@ -363,15 +478,15 @@
     });
 
     const performanceMessage = 
-      state.accuracy >= 80 ? 'Excellent! Strong understanding.' :
-      state.accuracy >= 60 ? 'Good effort! Room for improvement.' :
-      state.accuracy >= 40 ? 'Keep practicing! Focus on weak areas.' :
-      'Don\'t give up! Review the material and try again.';
+      state.accuracy >= 80 ? '🌟 Excellent! Strong understanding.' :
+      state.accuracy >= 60 ? '👍 Good effort! Keep practicing.' :
+      state.accuracy >= 40 ? '📚 Keep practicing! Review weak areas.' :
+      '💪 Don\'t give up! Review and try again.';
 
     container.innerHTML = `
       <div class="mcq-results">
         <div class="results-header">
-          <h2>Practice Complete</h2>
+          <h2>Practice Complete! 🎉</h2>
           <p class="performance-message">${performanceMessage}</p>
         </div>
 
@@ -381,29 +496,39 @@
             <span class="score-label">Accuracy</span>
           </div>
           <div class="score-details">
-            <p><strong>${state.score}/${state.questions.length}</strong> Correct</p>
-            <p class="detail-correct">✓ Correct: ${correct}</p>
-            <p class="detail-incorrect">✗ Incorrect: ${incorrect}</p>
-            <p class="detail-unanswered">⊘ Unanswered: ${unanswered}</p>
+            <p class="total-questions"><strong>${state.score}/${state.questions.length}</strong> Correct</p>
+            <div class="score-breakdown">
+              <p class="detail-correct">✓ Correct: <strong>${correct}</strong></p>
+              <p class="detail-incorrect">✗ Incorrect: <strong>${incorrect}</strong></p>
+              ${skipped > 0 ? `<p class="detail-skipped">⊘ Skipped: <strong>${skipped}</strong></p>` : ''}
+            </div>
           </div>
         </div>
 
         <div class="results-actions">
-          <button id="retry-btn" class="btn-primary">Retry This Set</button>
+          <button id="review-btn" class="btn-primary">Review Answers</button>
+          <button id="retry-btn" class="btn-secondary">Retry This Set</button>
           <button id="new-practice-btn" class="btn-secondary">New Practice</button>
         </div>
 
-        <div class="results-review">
-          <h3>Review Your Answers</h3>
-          <div id="review-container" class="review-list">
-            ${generateReviewHTML()}
+        <div id="review-section" style="display: none;">
+          <div class="results-review">
+            <h3>Review Your Answers</h3>
+            <div id="review-container" class="review-list">
+              ${generateReviewHTML()}
+            </div>
           </div>
         </div>
       </div>
     `;
 
+    document.getElementById('review-btn').addEventListener('click', () => {
+      const reviewSection = document.getElementById('review-section');
+      reviewSection.style.display = reviewSection.style.display === 'none' ? 'block' : 'none';
+      document.getElementById('review-btn').textContent = reviewSection.style.display === 'none' ? 'Review Answers' : 'Hide Review';
+    });
+
     document.getElementById('retry-btn').addEventListener('click', () => {
-      state.quizComplete = false;
       startQuiz();
     });
 
@@ -413,9 +538,10 @@
   // Generate review HTML
   function generateReviewHTML() {
     return state.questions.map((q, idx) => {
-      const userAnswer = state.selectedAnswers[idx];
-      const isCorrect = userAnswer === q.answer;
-      const statusClass = isCorrect ? 'correct' : unanswered ? 'unanswered' : 'incorrect';
+      const userAnswer = state.userAnswers[idx];
+      const shuffled = shuffleOptionsWithAnswerTracking(q);
+      const isCorrect = userAnswer === shuffled.answer;
+      const statusClass = userAnswer === undefined ? 'unanswered' : isCorrect ? 'correct' : 'incorrect';
       const statusText = userAnswer === undefined ? 'Unanswered' : isCorrect ? 'Correct' : 'Incorrect';
 
       return `
@@ -426,15 +552,19 @@
           </div>
           <p class="review-question">${escapeHtml(q.question)}</p>
           <div class="review-answer">
-            <p><strong>Correct Answer:</strong> ${escapeHtml(q.options[q.answer])}</p>
-            ${userAnswer !== undefined && userAnswer !== q.answer ? 
-              `<p><strong>Your Answer:</strong> ${escapeHtml(q.options[userAnswer])}</p>` : 
+            <p><strong>Correct Answer:</strong> ${escapeHtml(shuffled.options[shuffled.answer])}</p>
+            ${userAnswer !== undefined && !isCorrect ? 
+              `<p><strong>Your Answer:</strong> ${escapeHtml(shuffled.options[userAnswer])}</p>` : 
+              userAnswer !== undefined && isCorrect ?
+              `<p><strong>Your Answer:</strong> ${escapeHtml(shuffled.options[userAnswer])}</p>` :
               ''}
           </div>
-          <details class="review-explanation">
-            <summary>Explanation</summary>
-            <p>${escapeHtml(q.explanation)}</p>
-          </details>
+          ${q.explanation ? `
+            <details class="review-explanation">
+              <summary>Explanation</summary>
+              <p>${escapeHtml(q.explanation)}</p>
+            </details>
+          ` : ''}
         </div>
       `;
     }).join('');
@@ -447,7 +577,7 @@
 
     container.innerHTML = `
       <div class="mcq-error">
-        <p><strong>Error:</strong> ${message}</p>
+        <p><strong>⚠️ Error:</strong> ${message}</p>
         <button onclick="location.reload()">Reload Page</button>
       </div>
     `;
@@ -475,6 +605,7 @@
     loadMCQBank,
     startQuiz,
     restartQuiz,
-    finishQuiz
+    finishQuiz,
+    state: () => state
   };
 })();
