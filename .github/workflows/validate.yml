@@ -33,10 +33,8 @@ jobs:
           import json
           from pathlib import Path
           for path in Path('.').rglob('*.json'):
-              if any(part in {'.git','node_modules'} for part in path.parts):
-                  continue
-              with path.open(encoding='utf-8') as f:
-                  json.load(f)
+              if any(part in {'.git','node_modules'} for part in path.parts): continue
+              with path.open(encoding='utf-8') as f: json.load(f)
               print('JSON OK:', path)
           PY
 
@@ -45,12 +43,9 @@ jobs:
           python3 - <<'PY'
           from html.parser import HTMLParser
           from pathlib import Path
-          from urllib.parse import urlparse
 
           class Parser(HTMLParser):
-              def __init__(self):
-                  super().__init__()
-                  self.links=[]
+              def __init__(self): super().__init__(); self.links=[]
               def handle_starttag(self, tag, attrs):
                   attrs=dict(attrs)
                   for key in ('href','src'):
@@ -60,22 +55,16 @@ jobs:
           root=Path('.')
           errors=[]
           for path in root.rglob('*.html'):
-              if any(part in {'.git','node_modules'} for part in path.parts):
-                  continue
+              if any(part in {'.git','node_modules'} for part in path.parts): continue
               text=path.read_text(encoding='utf-8')
-              if '<!doctype html>' not in text.lower():
-                  errors.append(f'{path}: missing HTML5 doctype')
-              p=Parser();p.feed(text)
+              if '<!doctype html>' not in text.lower(): errors.append(f'{path}: missing HTML5 doctype')
+              p=Parser(); p.feed(text)
               for link in p.links:
-                  if not link or link.startswith(('http://','https://','mailto:','tel:','javascript:','data:','/api/')):
-                      continue
-                  target=(path.parent/link).resolve()
-                  if not target.exists():
-                      errors.append(f'{path}: missing local asset/link {link}')
-              print('HTML OK:', path)
+                  if not link or link.startswith(('http://','https://','mailto:','tel:','javascript:','data:','/api/')): continue
+                  if not (path.parent/link).resolve().exists(): errors.append(f'{path}: missing local asset/link {link}')
           if errors:
-              print('\n'.join(errors))
-              raise SystemExit(1)
+              print('\n'.join(errors)); raise SystemExit(1)
+          print('HTML/link validation passed')
           PY
 
       - name: Security header sanity check
@@ -83,3 +72,28 @@ jobs:
           grep -q "X-Content-Type-Options: nosniff" _headers
           grep -q "Strict-Transport-Security:" _headers
           grep -q "Content-Security-Policy:" _headers
+
+      - name: Game and worker invariant checks
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          game=Path('game-catcher.html').read_text(encoding='utf-8')
+          worker=Path('worker.js').read_text(encoding='utf-8')
+          required_game=['20 target medicines','20 distractors','data-mode="beginner"','data-mode="medium"','data-mode="expert"','id="classSelect"','id="classProgress"']
+          for marker in required_game:
+              assert marker in game, f'Missing Drug Catcher marker: {marker}'
+          for marker in ['POST','game_scores','completed','rawCorrect!==BOARD_TARGETS','expectedScore']:
+              assert marker in worker, f'Missing leaderboard validation marker: {marker}'
+          print('Game/worker invariants passed')
+          PY
+
+      - name: Architecture hygiene
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          text=Path('assets/js/site.js').read_text(encoding='utf-8')
+          assert text.count("assets/js/game-catcher-fix.js") == 1, 'Unexpected duplicate game-engine injection'
+          assert Path('ARCHITECTURE.md').exists()
+          assert Path('docs/DEVELOPMENT_STATUS.md').exists()
+          print('Architecture hygiene passed')
+          PY
