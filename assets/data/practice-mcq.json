@@ -1,1 +1,502 @@
-[]
+[
+  {
+    "id": "MCQ001",
+    "domain": "Pharmacology",
+    "topic": "Pharmacodynamics",
+    "difficulty": "easy",
+    "question": "Which term describes the study of what a drug does to the body?",
+    "options": ["Pharmacodynamics", "Pharmacognosy", "Pharmaceutics", "Pharmacopoeia"],
+    "answer": 0,
+    "explanation": "Pharmacodynamics is the study of drug effects on the body, including mechanisms of action, receptor binding, and physiological responses. Pharmacognosy studies natural drugs; Pharmaceutics deals with formulation; Pharmacopoeia is an official drug compendium."
+  },
+  {
+    "id": "MCQ002",
+    "domain": "Pharmacology",
+    "topic": "Drug Classification",
+    "difficulty": "easy",
+    "question": "Metformin is classified as which type of antidiabetic agent?",
+    "options": ["Biguanide", "Sulfonylurea", "Thiazolidinedione", "DPP-4 inhibitor"],
+    "answer": 0,
+    "explanation": "Metformin is a biguanide that improves insulin sensitivity and reduces hepatic glucose production. It is first-line therapy for type 2 diabetes and does not cause hypoglycemia when used alone."
+  },
+  {
+    "id": "MCQ003",
+    "domain": "Pharmacology",
+    "topic": "Cardiovascular Drugs",
+    "difficulty": "easy",
+    "question": "Losartan belongs to which drug class?",
+    "options": ["ACE inhibitor", "Angiotensin II receptor blocker (ARB)", "Beta blocker", "Calcium-channel blocker"],
+    "answer": 1,
+    "explanation": "Losartan is an ARB that selectively blocks AT1 receptors for angiotensin II, reducing vasoconstriction and aldosterone secretion. ARBs are alternatives to ACE inhibitors with similar efficacy and fewer side effects like dry cough."
+  },
+  {
+    "id": "MCQ004",
+    "domain": "Pharmacology",
+    "topic": "Drug Receptors",
+    "difficulty": "medium",
+    "question": "Which H1-receptor antagonist is considered first-generation and crosses the blood-brain barrier?",
+    "options": ["Cetirizine", "Loratadine", "Diphenhydramine", "Fexofenadine"],
+    "answer": 2,
+    "explanation": "Diphenhydramine is a first-generation antihistamine that crosses the blood-brain barrier and causes sedation. Second-generation antihistamines (cetirizine, loratadine, fexofenadine) are polar and do not cross the BBB, causing minimal sedation."
+  },
+  {
+    "id": "MCQ005",
+    "domain": "Pharmacology",
+    "topic": "Pharmacokinetics",
+    "difficulty": "medium",
+    "question": "Which statement best describes pharmacokinetics?",
+    "options": ["What the drug does to the body", "What the body does to the drug", "How a drug is chemically synthesized", "How a drug is classified by therapeutic use"],
+    "answer": 1,
+    "explanation": "Pharmacokinetics (ADME) describes what the body does to the drug: absorption, distribution, metabolism, and excretion. Pharmacodynamics describes what the drug does to the body."
+  },
+  {
+    "id": "MCQ006",
+    "domain": "Pharmacology",
+    "topic": "Drug Administration",
+    "difficulty": "medium",
+    "question": "Which route of administration generally avoids first-pass hepatic metabolism?",
+    "options": ["Oral", "Sublingual", "Enteric-coated oral", "Immediate-release oral"],
+    "answer": 1,
+    "explanation": "Sublingual tablets dissolve under the tongue and enter the bloodstream directly via sublingual veins, bypassing first-pass hepatic metabolism. This is why nitroglycerin is often given sublingually for rapid onset."
+  },
+  {
+    "id": "MCQ007",
+    "domain": "Pharmaceutics",
+    "topic": "Dosage Forms",
+    "difficulty": "easy",
+    "question": "Which dosage form is designed to deliver a drug as a measured liquid preparation?",
+    "options": ["Solution", "Suppository", "Tablet", "Transdermal patch"],
+    "answer": 0,
+    "explanation": "A solution is a homogeneous liquid dosage form where the drug is dissolved in the vehicle. It provides rapid absorption and accurate dosing but may have poor stability or unpleasant taste."
+  },
+  {
+    "id": "MCQ008",
+    "domain": "Pharmaceutics",
+    "topic": "Formulation Science",
+    "difficulty": "medium",
+    "question": "Reducing particle size in a pharmaceutical formulation primarily improves which property?",
+    "options": ["Surface area and dissolution rate", "Molecular weight", "Atomic density", "Boiling point"],
+    "answer": 0,
+    "explanation": "Reducing particle size increases surface area, which increases dissolution rate and bioavailability. This is why micronization is used to enhance absorption of poorly soluble drugs."
+  },
+  {
+    "id": "MCQ009",
+    "domain": "Pharmaceutics",
+    "topic": "Dispersed Systems",
+    "difficulty": "easy",
+    "question": "In a suspension, solid particles are:",
+    "options": ["Completely dissolved in the vehicle", "Dispersed but not dissolved in the vehicle", "Chemically converted to gas", "Always smaller than molecules"],
+    "answer": 1,
+    "explanation": "A suspension is a two-phase system where solid particles are dispersed but not dissolved in the liquid vehicle. Suspensions require shaking before use and may settle over time. This differs from solutions where the solute is truly dissolved."
+  },
+  {
+    "id": "MCQ010",
+    "domain": "Pharmaceutics",
+    "topic": "Bioavailability",
+    "difficulty": "medium",
+    "question": "Bioavailability refers to:",
+    "options": ["The fraction of administered dose reaching systemic circulation unchanged", "The total amount of drug in the body", "The rate of drug absorption", "The duration of drug action"],
+    "answer": 0,
+    "explanation": "Bioavailability (F) is the fraction of an administered dose that reaches systemic circulation in unchanged form. For oral drugs, it is always less than 100% due to incomplete absorption and first-pass metabolism."
+  },
+  {
+    "id": "MCQ011",
+    "domain": "Pharmaceutics",
+    "topic": "Drug Delivery",
+    "difficulty": "medium",
+    "question": "Which system is designed to release a drug gradually over an extended period?",
+    "options": ["Modified-release system", "Immediate-release tablet", "Instant powder", "Simple solution"],
+    "answer": 0,
+    "explanation": "Modified-release systems include sustained-release, controlled-release, and delayed-release formulations. They reduce dosing frequency and maintain therapeutic levels, improving patient compliance."
+  },
+  {
+    "id": "MCQ012",
+    "domain": "Pharmaceutical Chemistry",
+    "topic": "Organic Chemistry",
+    "difficulty": "easy",
+    "question": "What does pH measure in a solution?",
+    "options": ["Acidity and alkalinity", "Molecular mass", "Density", "Boiling point"],
+    "answer": 0,
+    "explanation": "pH is the negative logarithm of hydrogen ion concentration and indicates acidity (pH < 7), neutrality (pH = 7), or alkalinity (pH > 7). pH affects drug solubility, stability, and absorption."
+  },
+  {
+    "id": "MCQ013",
+    "domain": "Pharmaceutical Chemistry",
+    "topic": "Functional Groups",
+    "difficulty": "easy",
+    "question": "Which functional group is characteristic of alcohols?",
+    "options": ["Hydroxyl (-OH)", "Carboxyl (-COOH)", "Aldehyde (-CHO)", "Amide (-CONH2)"],
+    "answer": 0,
+    "explanation": "Alcohols contain the hydroxyl functional group (-OH) bonded to a carbon atom. Different alcohols (primary, secondary, tertiary) have different chemical and pharmacological properties."
+  },
+  {
+    "id": "MCQ014",
+    "domain": "Pharmaceutical Chemistry",
+    "topic": "Stereochemistry",
+    "difficulty": "medium",
+    "question": "Stereochemistry is primarily concerned with:",
+    "options": ["The three-dimensional arrangement of atoms in molecules", "The molecular mass of compounds", "The melting point of substances", "The color of drug solutions"],
+    "answer": 0,
+    "explanation": "Stereochemistry deals with spatial arrangement of atoms. Stereoisomers (enantiomers, diastereomers) may have different pharmacological activities. For example, only the S-enantiomer of some beta-blockers is active."
+  },
+  {
+    "id": "MCQ015",
+    "domain": "Pharmaceutical Chemistry",
+    "topic": "Acid-Base Chemistry",
+    "difficulty": "medium",
+    "question": "According to Brønsted-Lowry theory, a proton donor is a:",
+    "options": ["Base", "Acid", "Salt", "Catalyst"],
+    "answer": 1,
+    "explanation": "In Brønsted-Lowry theory, an acid is a proton (H+) donor and a base is a proton acceptor. This definition is broader than the Arrhenius definition and applies to non-aqueous systems."
+  },
+  {
+    "id": "MCQ016",
+    "domain": "Pharmaceutical Chemistry",
+    "topic": "Organic Compounds",
+    "difficulty": "easy",
+    "question": "A heterocyclic compound is best defined as:",
+    "options": ["A ring structure containing at least one non-carbon atom", "A molecule containing only carbon atoms", "A linear chain of atoms", "A salt formed from an acid and base"],
+    "answer": 0,
+    "explanation": "Heterocyclic compounds contain rings with carbon and one or more other elements (nitrogen, oxygen, sulfur). Many pharmaceutical drugs contain heterocyclic rings, such as imidazole, pyridine, and benzimidazole."
+  },
+  {
+    "id": "MCQ017",
+    "domain": "Pharmaceutical Analysis",
+    "topic": "Analytical Techniques",
+    "difficulty": "medium",
+    "question": "Which technique is commonly used to separate and identify compounds based on their distribution between two phases?",
+    "options": ["Chromatography", "Titration", "Filtration", "Sublimation"],
+    "answer": 0,
+    "explanation": "Chromatography (HPLC, GLC, TLC) separates compounds based on differential distribution between stationary and mobile phases. It is widely used for drug assay, purity testing, and impurity detection."
+  },
+  {
+    "id": "MCQ018",
+    "domain": "Pharmaceutical Analysis",
+    "topic": "Assay Methods",
+    "difficulty": "easy",
+    "question": "An assay in pharmaceutical analysis is used to determine:",
+    "options": ["The amount or potency of the active ingredient", "The color of the drug", "The package weight", "The storage temperature"],
+    "answer": 0,
+    "explanation": "Assay is a quantitative analytical method to determine the amount or potency of a drug in a formulation. It ensures the product meets labeled claim requirements."
+  },
+  {
+    "id": "MCQ019",
+    "domain": "Pharmaceutical Analysis",
+    "topic": "Quality Control",
+    "difficulty": "easy",
+    "question": "Quality Control (QC) primarily involves:",
+    "options": ["Testing and checking against established specifications", "Marketing and sales", "Recruitment of staff", "Curriculum design"],
+    "answer": 0,
+    "explanation": "QC is the operational aspect of quality that involves sampling, testing, and checking finished products against specifications to ensure they meet required standards."
+  },
+  {
+    "id": "MCQ020",
+    "domain": "Pharmaceutical Analysis",
+    "topic": "Quality Assurance",
+    "difficulty": "easy",
+    "question": "Quality Assurance (QA) primarily emphasizes:",
+    "options": ["Systems and processes that assure quality throughout manufacturing", "Only final product testing", "Only sales", "Only advertising"],
+    "answer": 0,
+    "explanation": "QA is a broad, system-oriented approach that includes design, process controls, training, documentation, and continuous improvement to prevent defects rather than just detect them."
+  },
+  {
+    "id": "MCQ021",
+    "domain": "Pharmacognosy",
+    "topic": "Natural Products",
+    "difficulty": "easy",
+    "question": "Pharmacognosy is the study of:",
+    "options": ["Crude drugs and natural sources of medicines", "Synthetic drug manufacturing", "Hospital administration", "Accounting practices"],
+    "answer": 0,
+    "explanation": "Pharmacognosy involves identification, isolation, characterization, and therapeutic evaluation of natural drugs derived from plants, animals, and minerals. It bridges traditional medicine and modern pharmacy."
+  },
+  {
+    "id": "MCQ022",
+    "domain": "Pharmacognosy",
+    "topic": "Plant Drugs",
+    "difficulty": "easy",
+    "question": "Which organism source is the traditional major source of medicinal drugs?",
+    "options": ["Plants", "Metals", "Plastics", "Minerals only"],
+    "answer": 0,
+    "explanation": "Plants have been the primary source of medicinal drugs historically. About 25% of modern pharmaceutical drugs are derived from plant sources. Examples include morphine from opium poppy and artemisinin from Artemisia annua."
+  },
+  {
+    "id": "MCQ023",
+    "domain": "Pharmacognosy",
+    "topic": "Phytochemistry",
+    "difficulty": "medium",
+    "question": "Phytochemistry focuses on the study of:",
+    "options": ["Chemical constituents of plants", "Hospital billing systems", "Manufacturing equipment", "Drug packaging materials"],
+    "answer": 0,
+    "explanation": "Phytochemistry is the chemistry of plants, studying secondary metabolites like alkaloids, glycosides, terpenes, and phenolics. These compounds often have important pharmacological activity."
+  },
+  {
+    "id": "MCQ024",
+    "domain": "Pharmacognosy",
+    "topic": "Drug Quality",
+    "difficulty": "medium",
+    "question": "An adulterant in the context of crude drugs is:",
+    "options": ["An unwanted or substitute material that compromises authenticity or quality", "A pure active constituent", "A validated analytical standard", "A therapeutic agent"],
+    "answer": 0,
+    "explanation": "Adulteration involves adding inferior, harmful, or inert materials to crude drugs to increase weight, reduce cost, or disguise inferior quality. Detection requires botanical and chemical analysis."
+  },
+  {
+    "id": "MCQ025",
+    "domain": "Microbiology",
+    "topic": "Microbial Contamination",
+    "difficulty": "medium",
+    "question": "In pharmaceutical manufacturing, sterile products require control of which critical attribute?",
+    "options": ["Microbial contamination", "Only color", "Only sweetness", "Only viscosity"],
+    "answer": 0,
+    "explanation": "Sterile products must be free from viable microorganisms and microbial toxins. Sterilization methods include autoclaving, filtration, and irradiation. Environmental monitoring is essential in sterile manufacturing areas."
+  },
+  {
+    "id": "MCQ026",
+    "domain": "Microbiology",
+    "topic": "Antimicrobial Agents",
+    "difficulty": "easy",
+    "question": "Which of the following is a mechanism of action of penicillins?",
+    "options": ["Inhibition of bacterial cell wall synthesis", "Inhibition of protein synthesis", "Inhibition of DNA replication", "Disruption of cell membrane"],
+    "answer": 0,
+    "explanation": "Penicillins are beta-lactam antibiotics that inhibit bacterial cell wall synthesis by blocking peptidoglycan cross-linking. This makes them bactericidal and selective for bacteria over human cells."
+  },
+  {
+    "id": "MCQ027",
+    "domain": "Microbiology",
+    "topic": "Antibiotic Resistance",
+    "difficulty": "medium",
+    "question": "Antibiotic resistance in bacteria can develop through which mechanism?",
+    "options": ["Production of beta-lactamase enzyme and genetic mutations", "Increased drug dosage", "Improved patient compliance", "Better food hygiene"],
+    "answer": 0,
+    "explanation": "Bacterial resistance develops through enzymatic degradation (beta-lactamase production), target modification, efflux pumps, and poor permeability. Inappropriate antibiotic use accelerates resistance development."
+  },
+  {
+    "id": "MCQ028",
+    "domain": "Biochemistry",
+    "topic": "Protein Synthesis",
+    "difficulty": "medium",
+    "question": "Which organelle is primarily responsible for protein synthesis?",
+    "options": ["Ribosome", "Mitochondrion", "Endoplasmic reticulum", "Golgi apparatus"],
+    "answer": 0,
+    "explanation": "Ribosomes are the site of protein synthesis, translating mRNA into polypeptide chains. Rough endoplasmic reticulum (RER) is studded with ribosomes. Many antibiotics target bacterial ribosomes."
+  },
+  {
+    "id": "MCQ029",
+    "domain": "Biochemistry",
+    "topic": "Metabolism",
+    "difficulty": "medium",
+    "question": "Which vitamin is essential for the hydroxylation of proline in collagen synthesis?",
+    "options": ["Vitamin C", "Vitamin A", "Vitamin B12", "Vitamin K"],
+    "answer": 0,
+    "explanation": "Vitamin C (ascorbic acid) is a cofactor for prolyl and lysyl hydroxylase enzymes that cross-link collagen. Deficiency causes scurvy with poor wound healing, bleeding gums, and connective tissue breakdown."
+  },
+  {
+    "id": "MCQ030",
+    "domain": "Biochemistry",
+    "topic": "Enzyme Function",
+    "difficulty": "medium",
+    "question": "A competitive inhibitor of an enzyme works primarily by:",
+    "options": ["Binding to the active site and blocking substrate access", "Binding to an allosteric site", "Inactivating the enzyme irreversibly", "Denaturing the enzyme protein"],
+    "answer": 0,
+    "explanation": "Competitive inhibitors bind reversibly to the enzyme's active site, competing with substrate for binding. Their effect can be overcome by increasing substrate concentration. Kinetically, Vmax remains unchanged but Km increases."
+  },
+  {
+    "id": "MCQ031",
+    "domain": "Anatomy & Physiology",
+    "topic": "Cardiovascular System",
+    "difficulty": "easy",
+    "question": "Which blood vessels have the thinnest walls and are primarily involved in nutrient and gas exchange?",
+    "options": ["Capillaries", "Arteries", "Veins", "Arterioles"],
+    "answer": 0,
+    "explanation": "Capillaries are composed of a single layer of endothelial cells, allowing for diffusion of oxygen, nutrients, and metabolic waste. Their large total surface area makes them the primary site of exchange."
+  },
+  {
+    "id": "MCQ032",
+    "domain": "Anatomy & Physiology",
+    "topic": "Respiratory System",
+    "difficulty": "medium",
+    "question": "Which structure in the lungs is responsible for gas exchange?",
+    "options": ["Alveoli", "Bronchioles", "Trachea", "Pharynx"],
+    "answer": 0,
+    "explanation": "Alveoli are tiny air sacs where gas exchange occurs between air and blood. Their large surface area (70+ square meters in adults) maximizes oxygen uptake and CO2 elimination."
+  },
+  {
+    "id": "MCQ033",
+    "domain": "Anatomy & Physiology",
+    "topic": "Renal System",
+    "difficulty": "medium",
+    "question": "The functional unit of the kidney responsible for filtration is the:",
+    "options": ["Nephron", "Collecting duct", "Loop of Henle", "Proximal convoluted tubule"],
+    "answer": 0,
+    "explanation": "The nephron, consisting of the glomerulus and renal tubules, is the functional filtering unit of the kidney. Each kidney contains approximately 1 million nephrons."
+  },
+  {
+    "id": "MCQ034",
+    "domain": "Pathophysiology",
+    "topic": "Inflammation",
+    "difficulty": "medium",
+    "question": "Which of the following is NOT a cardinal sign of inflammation?",
+    "options": ["Pallor", "Redness", "Heat", "Swelling"],
+    "answer": 0,
+    "explanation": "The five cardinal signs of inflammation are redness (rubor), heat (calor), swelling (tumor), pain (dolor), and loss of function (functio laesa). Pallor (paleness) is not a cardinal sign; redness is."
+  },
+  {
+    "id": "MCQ035",
+    "domain": "Pathophysiology",
+    "topic": "Infection",
+    "difficulty": "medium",
+    "question": "The stage of infection where the pathogen replicates before causing symptoms is called:",
+    "options": ["Incubation period", "Prodromal period", "Acute phase", "Recovery phase"],
+    "answer": 0,
+    "explanation": "The incubation period is the time between exposure to a pathogen and the appearance of first symptoms. It varies by disease (days to years). This is why quarantine periods are imposed."
+  },
+  {
+    "id": "MCQ036",
+    "domain": "Pharmaceutical Calculations",
+    "topic": "Dosage Calculations",
+    "difficulty": "easy",
+    "question": "If a drug is available as 250 mg/5 mL and the prescribed dose is 500 mg, what volume should be administered?",
+    "options": ["10 mL", "5 mL", "20 mL", "2.5 mL"],
+    "answer": 0,
+    "explanation": "Using the formula: Volume = (Dose required × Total volume) / Concentration = (500 mg × 5 mL) / 250 mg = 10 mL. Accurate dosage calculations are critical for patient safety."
+  },
+  {
+    "id": "MCQ037",
+    "domain": "Pharmaceutical Calculations",
+    "topic": "Percentage Calculations",
+    "difficulty": "medium",
+    "question": "What is the percentage strength of a solution containing 25 g of drug in 500 mL of solution?",
+    "options": ["5%", "10%", "2%", "25%"],
+    "answer": 0,
+    "explanation": "Percentage strength = (weight of solute in grams / volume of solution in mL) × 100 = (25 g / 500 mL) × 100 = 5%. This represents 5 g of drug per 100 mL of solution."
+  },
+  {
+    "id": "MCQ038",
+    "domain": "Pharmaceutical Calculations",
+    "topic": "Molarity",
+    "difficulty": "medium",
+    "question": "How many moles of NaCl are present in 500 mL of 0.9 M NaCl solution?",
+    "options": ["0.45 moles", "0.9 moles", "1.8 moles", "0.225 moles"],
+    "answer": 0,
+    "explanation": "Moles = Molarity × Volume in liters = 0.9 M × 0.5 L = 0.45 moles. Understanding molar calculations is essential for preparing pharmaceutical solutions and understanding drug bioavailability."
+  },
+  {
+    "id": "MCQ039",
+    "domain": "Clinical Pharmacy",
+    "topic": "Drug Interactions",
+    "difficulty": "medium",
+    "question": "Which type of drug interaction occurs when one drug increases the metabolism of another?",
+    "options": ["Enzyme induction", "Enzyme inhibition", "Displacement from protein binding", "Competition at absorption"],
+    "answer": 0,
+    "explanation": "Enzyme induction increases the production of metabolizing enzymes (like CYP3A4), accelerating metabolism and reducing the plasma concentration of the affected drug. Barbiturates and rifampicin are classic inducers."
+  },
+  {
+    "id": "MCQ040",
+    "domain": "Clinical Pharmacy",
+    "topic": "Adverse Drug Reactions",
+    "difficulty": "medium",
+    "question": "Which classification describes an adverse drug reaction that is dose-dependent and predictable?",
+    "options": ["Type A (Augmented)", "Type B (Bizarre)", "Type C (Continuous)", "Type D (Delayed)"],
+    "answer": 0,
+    "explanation": "Type A reactions are dose-dependent, predictable, and related to the drug's pharmacology (e.g., hypoglycemia with insulin). Type B reactions are unpredictable, dose-independent, and often immunological (e.g., anaphylaxis)."
+  },
+  {
+    "id": "MCQ041",
+    "domain": "Clinical Pharmacy",
+    "topic": "Medication Errors",
+    "difficulty": "medium",
+    "question": "A medication error is best defined as:",
+    "options": ["A preventable event that may cause or lead to inappropriate medication use or patient harm", "Any adverse effect from a drug", "Any deviation from prescribed therapy", "A minor documentation mistake"],
+    "answer": 0,
+    "explanation": "Medication errors are preventable and may occur at any stage of the medication process (prescribing, dispensing, administration). Not all errors cause harm, but all should be reported and analyzed."
+  },
+  {
+    "id": "MCQ042",
+    "domain": "Pharmacovigilance",
+    "topic": "Drug Safety",
+    "difficulty": "medium",
+    "question": "Pharmacovigilance primarily involves:",
+    "options": ["Detection and assessment of medicine-related safety problems and adverse reactions", "Manufacturing of drugs", "Marketing of medications", "Only post-marketing surveillance"],
+    "answer": 0,
+    "explanation": "Pharmacovigilance is the ongoing monitoring of medicines for safety throughout their lifecycle—from clinical trials through post-market use. It identifies new safety signals and risk mitigation strategies."
+  },
+  {
+    "id": "MCQ043",
+    "domain": "Hospital Pharmacy",
+    "topic": "Drug Storage",
+    "difficulty": "easy",
+    "question": "Most pharmaceutical products should be stored at room temperature, which is typically defined as:",
+    "options": ["15-25°C", "25-35°C", "0-4°C", "35-40°C"],
+    "answer": 0,
+    "explanation": "Room temperature storage (15-25°C) is standard for most drugs. Some drugs require refrigeration (2-8°C), and others need freezing (<-20°C). Proper storage maintains drug stability and efficacy."
+  },
+  {
+    "id": "MCQ044",
+    "domain": "Hospital Pharmacy",
+    "topic": "Drug Distribution",
+    "difficulty": "medium",
+    "question": "Which system of drug distribution in hospitals ensures that each patient receives the exact amount of medication prescribed for a specific time period?",
+    "options": ["Unit dose system", "Stock system", "Ward stock system", "Centralized system"],
+    "answer": 0,
+    "explanation": "The unit dose system pre-packages individual doses for specific patients, reducing medication errors, improving inventory management, and allowing for double-checks before administration."
+  },
+  {
+    "id": "MCQ045",
+    "domain": "Community Pharmacy",
+    "topic": "Rational Drug Use",
+    "difficulty": "medium",
+    "question": "Rational drug use means that patients receive medications that are:",
+    "options": ["Appropriate to their clinical need, in the correct dose, for adequate duration, and at affordable cost", "Only the cheapest available", "Only branded drugs", "Always prescribed in maximum doses"],
+    "answer": 0,
+    "explanation": "Rational drug use, promoted by WHO, ensures that medications are evidence-based, appropriately indicated, correctly dosed, and accessible. This improves outcomes and reduces waste."
+  },
+  {
+    "id": "MCQ046",
+    "domain": "Community Pharmacy",
+    "topic": "Patient Counseling",
+    "difficulty": "medium",
+    "question": "When counseling a patient on a new antibiotic prescription, which information is most critical to communicate?",
+    "options": ["Complete the full course even if symptoms resolve", "Stop taking when you feel better", "Double the dose if you miss one", "Take with alcohol to improve absorption"],
+    "answer": 0,
+    "explanation": "Patients must complete the full antibiotic course to prevent resistance development, even if symptoms improve. Premature discontinuation risks treatment failure and resistance."
+  },
+  {
+    "id": "MCQ047",
+    "domain": "Regulatory Affairs",
+    "topic": "Drug Approval",
+    "difficulty": "medium",
+    "question": "In drug regulatory affairs, which phase of clinical trials involves the largest number of participants and assesses efficacy and monitoring of adverse reactions?",
+    "options": ["Phase III", "Phase I", "Phase II", "Phase IV"],
+    "answer": 0,
+    "explanation": "Phase III trials involve 1,000-10,000 participants and confirm efficacy, monitor adverse reactions, and compare with standard treatments. Success here enables regulatory approval; Phase IV is post-market surveillance."
+  },
+  {
+    "id": "MCQ048",
+    "domain": "Medicinal Chemistry",
+    "topic": "Drug Design",
+    "difficulty": "medium",
+    "question": "Structure-Activity Relationship (SAR) in medicinal chemistry studies:",
+    "options": ["How small changes in chemical structure affect biological activity", "Only the synthesis route of drugs", "The cost of drug manufacturing", "The market price of drugs"],
+    "answer": 0,
+    "explanation": "SAR analysis relates chemical structure to pharmacological activity, guiding drug design and optimization. Understanding SAR helps identify essential pharmacophores and reduce adverse effects."
+  },
+  {
+    "id": "MCQ049",
+    "domain": "Quality Assurance",
+    "topic": "GMP Principles",
+    "difficulty": "medium",
+    "question": "Good Manufacturing Practice (GMP) primarily ensures that:",
+    "options": ["Products are consistently produced to required quality standards", "Products are the cheapest available", "Products have maximum dosage strength", "All drugs are imported only"],
+    "answer": 0,
+    "explanation": "GMP establishes guidelines for manufacturing facilities, equipment, personnel, processes, and quality control. Compliance ensures consistent product quality and safety from batch to batch."
+  },
+  {
+    "id": "MCQ050",
+    "domain": "Pharmacology",
+    "topic": "Drug Tolerance",
+    "difficulty": "hard",
+    "question": "Which mechanism best explains acute tolerance (tachyphylaxis) to nitrates when used continuously without a nitrate-free interval?",
+    "options": ["Depletion of sulfhydryl donors and impaired bioconversion of nitrates", "Enzyme inhibition", "Increased drug excretion", "Reduced gastrointestinal absorption"],
+    "answer": 0,
+    "explanation": "Nitrate tolerance develops due to depletion of sulfhydryl cofactors (cysteine, N-acetylcysteine) needed to bioconvert organic nitrates to active nitric oxide. A 10-14 hour nitrate-free interval daily prevents tolerance."
+  }
+]
